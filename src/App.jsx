@@ -69,10 +69,11 @@ function App() {
   }, []);
 
   return (
-    <div className="app-container" ref={containerRef}>
+    <div className="main-wrapper" ref={containerRef}>
       <div className="woodland-bg" ref={bgRef}></div>
       
-      <div className="content-overlay">
+      <div className="app-container">
+        <div className="content-overlay">
         
         {/* Header Section */}
         <div className="glass-card header-section">
@@ -125,6 +126,7 @@ function App() {
         {/* Spacer */}
         <div style={{ height: '10vh' }}></div>
 
+        </div>
       </div>
 
       {/* Animated Bear Sprite Container */}
