@@ -32,7 +32,7 @@ function App() {
 
     // Bear horizontal movement (Pinned Section)
     gsap.to(bear, {
-      x: "calc(100vw + 140px)",
+      x: "140vw",
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
