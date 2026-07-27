@@ -90,7 +90,7 @@ function App() {
       </div>
 
       {/* Pinned Section for Bear */}
-      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', zIndex: 10 }}>
         <div className="bear-container" ref={bearRef}></div>
       </div>
 

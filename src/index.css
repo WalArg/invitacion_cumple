@@ -175,5 +175,6 @@ h2 {
   background-image: url('/oso_caminando_png.png');
   background-size: 600% 100%; /* 6 frames */
   background-position: 0 0;
-  z-index: 3;
+  z-index: 20;
+  opacity: 1 !important;
 }
