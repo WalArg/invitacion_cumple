@@ -169,8 +169,8 @@ h2 {
 /* Bear Sprite Container */
 .bear-container {
   position: absolute;
-  bottom: 15%;
-  left: -20vw; /* Initial position */
+  bottom: 10%;
+  left: -200px; /* Start completely offscreen */
   width: 144.5px; /* Preserving exact original aspect ratio */
   height: 288px;
   background-image: url('/oso_caminando_png.png');
