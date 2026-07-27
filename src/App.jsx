@@ -7,21 +7,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const bearRef = useRef(null);
+  const bearSpriteRef = useRef(null);
   const rabbitRef = useRef(null);
+  const rabbitSpriteRef = useRef(null);
   const containerRef = useRef(null);
   const pinRef = useRef(null);
   const detailsCardRef = useRef(null);
 
   useEffect(() => {
     const bear = bearRef.current;
+    const bearSprite = bearSpriteRef.current;
     const rabbit = rabbitRef.current;
+    const rabbitSprite = rabbitSpriteRef.current;
     const container = containerRef.current;
     const pinSection = pinRef.current;
     const detailsCard = detailsCardRef.current;
 
     if (!bear || !container || !pinSection) return;
 
-    // Single Master Timeline for the Pinned Section (guarantees zero desync)
+    // Single Master Timeline for the Pinned Section
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
@@ -32,55 +36,52 @@ function App() {
       }
     });
 
-    // 1. Bear horizontal movement
+    // 1. Outer containers move horizontally across the screen
     tl.to(bear, {
-      x: "140vw",
+      x: "135vw",
       ease: "none",
     }, 0);
 
-    // 2. Bear sprite animation (legs & bounce)
-    const spriteConfig = { frame: 0 };
-    tl.to(spriteConfig, {
+    if (rabbit) {
+      tl.to(rabbit, {
+        x: "135vw",
+        ease: "none",
+      }, 0);
+    }
+
+    // 2. Inner sprite elements handle frame switching & y bounce independently
+    const bearSpriteConfig = { frame: 0 };
+    tl.to(bearSpriteConfig, {
       frame: 18,
       ease: "none",
       onUpdate: () => {
-        const currentFrame = Math.floor(spriteConfig.frame) % 6;
+        if (!bearSprite) return;
+        const currentFrame = Math.floor(bearSpriteConfig.frame) % 6;
         const xPos = currentFrame * 20;
         const isUp = currentFrame % 2 !== 0;
 
-        gsap.set(bear, {
-          backgroundPosition: `${xPos}% 0`,
-          y: isUp ? -8 : 0
-        });
+        bearSprite.style.backgroundPosition = `${xPos}% 0`;
+        bearSprite.style.transform = `translateY(${isUp ? -8 : 0}px)`;
       }
     }, 0);
 
-    // 3. Rabbit horizontal movement (following behind bear)
-    if (rabbit) {
-      tl.to(rabbit, {
-        x: "140vw",
-        ease: "none",
-      }, 0);
-
-      // 4. Rabbit sprite animation
-      const rabbitSprite = { frame: 0 };
-      tl.to(rabbitSprite, {
+    if (rabbitSprite) {
+      const rabbitSpriteConfig = { frame: 0 };
+      tl.to(rabbitSpriteConfig, {
         frame: 24,
         ease: "none",
         onUpdate: () => {
-          const currentFrame = Math.floor(rabbitSprite.frame) % 6;
+          const currentFrame = Math.floor(rabbitSpriteConfig.frame) % 6;
           const xPos = currentFrame * 20;
           const isUp = currentFrame % 2 !== 0;
 
-          gsap.set(rabbit, {
-            backgroundPosition: `${xPos}% 0`,
-            y: isUp ? -10 : 0
-          });
+          rabbitSprite.style.backgroundPosition = `${xPos}% 0`;
+          rabbitSprite.style.transform = `translateY(${isUp ? -10 : 0}px)`;
         }
       }, 0);
     }
 
-    // 5. Event Details card fade-in animation
+    // 3. Event Details card fade-in animation
     if (detailsCard) {
       tl.fromTo(detailsCard, 
         { opacity: 0, scale: 0.85, y: 30 },
@@ -130,10 +131,14 @@ function App() {
         </div>
 
         {/* Animated Rabbit Sprite Container (behind bear) */}
-        <div className="rabbit-container" ref={rabbitRef}></div>
+        <div className="rabbit-container" ref={rabbitRef}>
+          <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
+        </div>
 
         {/* Animated Bear Sprite Container */}
-        <div className="bear-container" ref={bearRef}></div>
+        <div className="bear-container" ref={bearRef}>
+          <div className="bear-sprite" ref={bearSpriteRef}></div>
+        </div>
       </div>
 
       <div className="app-container">

@@ -174,30 +174,42 @@ h2 {
   60% { transform: translateY(-4px); }
 }
 
-/* Rabbit Sprite Container */
+/* Rabbit Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .rabbit-container {
   position: absolute;
-  bottom: 0%;
-  left: -150px;
+  bottom: 2%;
+  left: -120px;
   width: 55px;
   height: 95px;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.rabbit-sprite {
+  width: 100%;
+  height: 100%;
   background-image: url('/conejo_caminando_png.png');
   background-size: 600% 100%;
   background-position: 0 0;
-  z-index: 18;
-  opacity: 1 !important;
+  background-repeat: no-repeat;
 }
 
-/* Bear Sprite Container */
+/* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .bear-container {
   position: absolute;
-  bottom: 0%;
-  left: -80px;
+  bottom: 2%;
+  left: -70px;
   width: 70px;
   height: 140px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.bear-sprite {
+  width: 100%;
+  height: 100%;
   background-image: url('/oso_caminando_png.png');
   background-size: 600% 100%;
   background-position: 0 0;
-  z-index: 20;
-  opacity: 1 !important;
+  background-repeat: no-repeat;
 }
