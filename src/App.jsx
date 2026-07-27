@@ -36,28 +36,23 @@ function App() {
       scrollTrigger: {
         trigger: container,
         start: "top top",
-        end: "bottom bottom",
-        scrub: 1, // Smooth scrubbing
+        end: "+=3000", // Spread the movement over 3000px of scrolling (approx 3 viewports)
+        scrub: 1,
       }
     });
 
-    // Bear sprite animation (stepped) synced with scroll
-    // The sprite has 6 frames (0 to 5), so steps(5)
+    // Bear sprite animation (Infinite walking legs)
     gsap.to(bear, {
-      backgroundPosition: "100% 0", // Shift to the last frame
+      backgroundPosition: "100% 0",
       ease: "steps(5)",
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 0.1, // Faster scrub for the sprite to feel snappy
-      }
+      repeat: -1,
+      duration: 0.8 // Normal walking speed
     });
 
     // Bear subtle bounce
     gsap.to(bear, {
-      y: "-=8px",
-      duration: 0.3,
+      y: "-=16px",
+      duration: 0.4,
       yoyo: true,
       repeat: -1,
       ease: "power1.inOut"

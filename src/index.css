@@ -171,8 +171,8 @@ h2 {
   position: absolute;
   bottom: 15%;
   left: -20vw; /* Initial position */
-  width: 120px;
-  height: 120px;
+  width: 240px; /* 2x size */
+  height: 240px;
   background-image: url('/oso_caminando_png.png');
   background-size: 600% 100%; /* 6 frames */
   background-position: 0 0;
