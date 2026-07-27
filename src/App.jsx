@@ -13,7 +13,6 @@ function App() {
   const rabbitRef = useRef(null);
   const rabbitSpriteRef = useRef(null);
   const containerRef = useRef(null);
-  const bgRef = useRef(null);
   const pinRef = useRef(null);
   const detailsCardRef = useRef(null);
 
@@ -25,22 +24,10 @@ function App() {
     const rabbit = rabbitRef.current;
     const rabbitSprite = rabbitSpriteRef.current;
     const container = containerRef.current;
-    const bg = bgRef.current;
     const pinSection = pinRef.current;
     const detailsCard = detailsCardRef.current;
 
     if (!bear || !container || !pinSection) return;
-
-    // Pin background image at the exact same time as bear pin section
-    if (bg) {
-      ScrollTrigger.create({
-        trigger: pinSection,
-        start: "top top",
-        end: "+=1200",
-        pin: bg,
-        pinSpacing: false
-      });
-    }
 
     // Single Master Timeline for the Pinned Section
     const tl = gsap.timeline({
@@ -139,9 +126,6 @@ function App() {
 
   return (
     <div className="main-wrapper" ref={containerRef}>
-
-      {/* Full-width continuous woodland background visible from the very top */}
-      <div className="woodland-bg" ref={bgRef}></div>
 
       <div className="app-container">
         <div className="content-overlay">

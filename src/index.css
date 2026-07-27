@@ -38,32 +38,21 @@ body {
   z-index: 2;
 }
 
-/* The continuous woodland background visible from the top across full page width */
-.woodland-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/bosque3.png');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  z-index: 1;
-  opacity: 0.95;
-}
-
 /* Pinned section for Bear, Rabbit & Event Details */
 .bear-pin-section {
   position: relative;
   width: 100%;
   height: 100vh;
+  background-image: url('/bosque3.png');
+  background-size: 100% auto; /* 100% screen width, natural un-zoomed height */
+  background-position: center 75%; /* Positioned in the lower portion of the screen */
+  background-repeat: no-repeat;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 55px;
+  padding-top: 50px;
 }
 
 /* Content overlay */
