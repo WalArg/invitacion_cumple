@@ -10,12 +10,14 @@ function App() {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
   const pinRef = useRef(null);
+  const detailsCardRef = useRef(null);
 
   useEffect(() => {
     const bear = bearRef.current;
     const container = containerRef.current;
     const bg = bgRef.current;
     const pinSection = pinRef.current;
+    const detailsCard = detailsCardRef.current;
 
     if (!bear || !container || !pinSection) return;
 
@@ -30,12 +32,12 @@ function App() {
 
     // Bear horizontal movement (Pinned Section)
     gsap.to(bear, {
-      x: "150vw", // Move completely across the screen
+      x: "150vw",
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
-        start: "top top", // Pin when this section hits the top of the viewport
-        end: "+=2000", // Pins for about 2 scrolls
+        start: "top top",
+        end: "+=2000",
         pin: true,
         scrub: 1,
       }
@@ -44,7 +46,7 @@ function App() {
     // Bear sprite animation tied strictly to the same pin scroll
     const spriteConfig = { frame: 0 };
     gsap.to(spriteConfig, {
-      frame: 45, // Number of total walk cycles over the 2000px pin
+      frame: 45,
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
@@ -63,6 +65,25 @@ function App() {
         }
       }
     });
+
+    // Event Details card fade-in animation during the start of the pin
+    if (detailsCard) {
+      gsap.fromTo(detailsCard, 
+        { opacity: 0, scale: 0.8, y: 40 },
+        {
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: pinSection,
+            start: "top top",
+            end: "+=600",
+            scrub: 1,
+          }
+        }
+      );
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
@@ -89,8 +110,23 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Bear */}
-      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', zIndex: 10 }}>
+      {/* Pinned Section for Bear & Event Details */}
+      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        
+        {/* Event Details Section appearing inside the pinned screen */}
+        <div className="glass-card details-section" ref={detailsCardRef} style={{ width: '90%', maxWidth: '440px', zIndex: 15 }}>
+          <h2>Detalles del evento</h2>
+          <ul className="details-list">
+            <li>📅 <strong>Fecha:</strong> Sábado 15 de Noviembre</li>
+            <li>⏰ <strong>Hora:</strong> 16:00 hs</li>
+            <li>📍 <strong>Lugar:</strong> Salón El Bosque</li>
+          </ul>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+            Ver en Google Maps
+          </a>
+        </div>
+
+        {/* Animated Bear Sprite Container */}
         <div className="bear-container" ref={bearRef}></div>
       </div>
 
@@ -98,22 +134,6 @@ function App() {
         <div className="content-overlay">
 
           {/* Spacer after bear pin */}
-          <div style={{ height: '20vh' }}></div>
-
-          {/* Event Details Section */}
-          <div className="glass-card details-section">
-            <h2>Detalles del evento</h2>
-            <ul className="details-list">
-              <li>📅 <strong>Fecha:</strong> Sábado 15 de Noviembre</li>
-              <li>⏰ <strong>Hora:</strong> 16:00 hs</li>
-              <li>📍 <strong>Lugar:</strong> Salón El Bosque</li>
-            </ul>
-            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Ver en Google Maps
-            </a>
-          </div>
-
-          {/* Spacer */}
           <div style={{ height: '20vh' }}></div>
 
           {/* RSVP Section */}
