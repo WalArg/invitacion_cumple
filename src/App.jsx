@@ -41,7 +41,7 @@ function App() {
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
-        start: "top top",
+        start: "center center",
         end: "+=1200",
         scrub: 1,
         onUpdate: () => {
@@ -64,7 +64,7 @@ function App() {
         ease: "none",
         scrollTrigger: {
           trigger: pinSection,
-          start: "top top",
+          start: "center center",
           end: "+=1200",
           scrub: 1,
         }
@@ -77,7 +77,7 @@ function App() {
         ease: "none",
         scrollTrigger: {
           trigger: pinSection,
-          start: "top top",
+          start: "center center",
           end: "+=1200",
           scrub: 1,
           onUpdate: () => {
@@ -105,7 +105,7 @@ function App() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: pinSection,
-            start: "top top",
+            start: "center center",
             end: "+=400",
             scrub: 1,
           }
