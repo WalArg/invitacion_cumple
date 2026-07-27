@@ -27,7 +27,7 @@ function App() {
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
-        start: "top top",
+        start: "center center",
         end: "+=1200",
         pin: true,
         scrub: 1,
