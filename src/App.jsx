@@ -19,9 +19,9 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Parallax background
+    // Parallax background (fixed background, moving position)
     gsap.to(bg, {
-      yPercent: 20,
+      backgroundPositionY: "100%",
       ease: "none",
       scrollTrigger: {
         trigger: container,
@@ -93,7 +93,7 @@ function App() {
       </div>
 
       {/* Pinned Section for Bear */}
-      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh' }}>
         <div className="bear-container" ref={bearRef}></div>
       </div>
 

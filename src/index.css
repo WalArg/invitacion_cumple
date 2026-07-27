@@ -27,7 +27,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 150vh;
-  overflow-x: hidden;
 }
 
 /* Mobile-first container */
@@ -40,14 +39,14 @@ body {
 
 /* The continuous woodland background */
 .woodland-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: url('/bosque3.png');
   background-size: cover;
-  background-position: top center;
+  background-position: center 0%;
   background-repeat: no-repeat;
   z-index: 1;
   opacity: 0.9;
