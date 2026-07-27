@@ -6,6 +6,8 @@ import './index.css';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const babyRef = useRef(null);
+  const babySpriteRef = useRef(null);
   const bearRef = useRef(null);
   const bearSpriteRef = useRef(null);
   const rabbitRef = useRef(null);
@@ -15,6 +17,8 @@ function App() {
   const detailsCardRef = useRef(null);
 
   useEffect(() => {
+    const baby = babyRef.current;
+    const babySprite = babySpriteRef.current;
     const bear = bearRef.current;
     const bearSprite = bearSpriteRef.current;
     const rabbit = rabbitRef.current;
@@ -36,20 +40,37 @@ function App() {
       }
     });
 
-    // 1. Outer containers move horizontally across the screen
+    // 1. Baby Luca horizontal movement (Leading the parade)
+    if (baby) {
+      tl.to(baby, {
+        x: "135vw",
+        ease: "none",
+      }, 0);
+
+      // Baby sprite animation & bounce
+      const babySpriteConfig = { frame: 0 };
+      tl.to(babySpriteConfig, {
+        frame: 18,
+        ease: "none",
+        onUpdate: () => {
+          if (!babySprite) return;
+          const currentFrame = Math.floor(babySpriteConfig.frame) % 6;
+          const xPos = currentFrame * 20;
+          const isUp = currentFrame % 2 !== 0;
+
+          babySprite.style.backgroundPosition = `${xPos}% 0`;
+          babySprite.style.transform = `translateY(${isUp ? -8 : 0}px)`;
+        }
+      }, 0);
+    }
+
+    // 2. Bear horizontal movement
     tl.to(bear, {
       x: "135vw",
       ease: "none",
     }, 0);
 
-    if (rabbit) {
-      tl.to(rabbit, {
-        x: "135vw",
-        ease: "none",
-      }, 0);
-    }
-
-    // 2. Inner sprite elements handle frame switching & y bounce independently
+    // Bear sprite animation (legs & bounce)
     const bearSpriteConfig = { frame: 0 };
     tl.to(bearSpriteConfig, {
       frame: 18,
@@ -65,12 +86,20 @@ function App() {
       }
     }, 0);
 
-    if (rabbitSprite) {
+    // 3. Rabbit horizontal movement (following behind bear)
+    if (rabbit) {
+      tl.to(rabbit, {
+        x: "135vw",
+        ease: "none",
+      }, 0);
+
+      // Rabbit sprite animation
       const rabbitSpriteConfig = { frame: 0 };
       tl.to(rabbitSpriteConfig, {
         frame: 24,
         ease: "none",
         onUpdate: () => {
+          if (!rabbitSprite) return;
           const currentFrame = Math.floor(rabbitSpriteConfig.frame) % 6;
           const xPos = currentFrame * 20;
           const isUp = currentFrame % 2 !== 0;
@@ -81,7 +110,7 @@ function App() {
       }, 0);
     }
 
-    // 3. Event Details card fade-in animation
+    // 4. Event Details card fade-in animation
     if (detailsCard) {
       tl.fromTo(detailsCard, 
         { opacity: 0, scale: 0.85, y: 30 },
@@ -114,7 +143,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Bear, Rabbit & Event Details */}
+      {/* Pinned Section for Baby, Bear, Rabbit & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
         
         {/* Event Details Section appearing inside the pinned screen */}
@@ -130,14 +159,19 @@ function App() {
           </a>
         </div>
 
-        {/* Animated Rabbit Sprite Container (behind bear) */}
-        <div className="rabbit-container" ref={rabbitRef}>
-          <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
+        {/* Animated Baby Luca Sprite Container (leading in front) */}
+        <div className="baby-container" ref={babyRef}>
+          <div className="baby-sprite" ref={babySpriteRef}></div>
         </div>
 
         {/* Animated Bear Sprite Container */}
         <div className="bear-container" ref={bearRef}>
           <div className="bear-sprite" ref={bearSpriteRef}></div>
+        </div>
+
+        {/* Animated Rabbit Sprite Container (behind bear) */}
+        <div className="rabbit-container" ref={rabbitRef}>
+          <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
         </div>
       </div>
 
