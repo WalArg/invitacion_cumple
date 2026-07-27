@@ -19,17 +19,36 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Parallax background (fixed background, moving position)
-    gsap.to(bg, {
-      backgroundPositionY: "100%",
-      ease: "none",
-      scrollTrigger: {
-        trigger: container,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true
+    // Background Parallax Phase 1 (Before Pin: 0% -> 35%)
+    gsap.fromTo(bg, 
+      { backgroundPositionY: "0%" },
+      {
+        backgroundPositionY: "35%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: pinSection,
+          start: "top bottom",
+          end: "top top",
+          scrub: true
+        }
       }
-    });
+    );
+
+    // Background Parallax Phase 2 (After Pin: 35% -> 100%)
+    // Notice during the 2000px pin duration, backgroundPositionY remains frozen at 35%!
+    gsap.fromTo(bg, 
+      { backgroundPositionY: "35%" },
+      {
+        backgroundPositionY: "100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: pinSection,
+          start: "top top+=2000",
+          end: "bottom bottom",
+          scrub: true
+        }
+      }
+    );
 
     // Bear horizontal movement (Pinned Section)
     gsap.to(bear, {
