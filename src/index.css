@@ -42,14 +42,14 @@ body {
   z-index: 2;
 }
 
-/* Woodland background for the pinned section (preserving 2400x1792 aspect ratio without cropping) */
+/* Woodland background for the pinned section (with soft watercolor edge blending and larger mobile height) */
 .bear-pin-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 2400 / 1792;
-  min-height: 280px;
+  min-height: 380px;
+  height: 50vh;
   background-image: url('/bosque3.png');
-  background-size: 100% 100%;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   z-index: 10;
@@ -58,7 +58,10 @@ body {
   justify-content: center;
   align-items: center;
   overflow: visible;
-  margin: 40px 0;
+  margin: 30px 0;
+  /* Seamless watercolor fade on top & bottom edges to eliminate any sharp cuts/seams */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
 }
 
 /* Content overlay */
@@ -177,7 +180,7 @@ h2 {
 /* Rabbit Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .rabbit-container {
   position: absolute;
-  bottom: 2%;
+  bottom: 8%;
   left: -120px;
   width: 55px;
   height: 95px;
@@ -197,7 +200,7 @@ h2 {
 /* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .bear-container {
   position: absolute;
-  bottom: 2%;
+  bottom: 8%;
   left: -70px;
   width: 70px;
   height: 140px;
