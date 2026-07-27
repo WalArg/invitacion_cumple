@@ -21,10 +21,8 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Bear horizontal movement (Pinned Section)
-    gsap.to(bear, {
-      x: "140vw",
-      ease: "none",
+    // Single Master Timeline for the Pinned Section (guarantees zero desync)
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
         start: "center center",
@@ -34,82 +32,60 @@ function App() {
       }
     });
 
-    // Bear sprite animation (Paced for mobile: 18 frames = 3 natural walk cycles)
+    // 1. Bear horizontal movement
+    tl.to(bear, {
+      x: "140vw",
+      ease: "none",
+    }, 0);
+
+    // 2. Bear sprite animation (legs & bounce)
     const spriteConfig = { frame: 0 };
-    gsap.to(spriteConfig, {
+    tl.to(spriteConfig, {
       frame: 18,
       ease: "none",
-      scrollTrigger: {
-        trigger: pinSection,
-        start: "center center",
-        end: "+=1200",
-        scrub: 1,
+      onUpdate: () => {
+        const currentFrame = Math.floor(spriteConfig.frame) % 6;
+        const xPos = currentFrame * 20;
+        const isUp = currentFrame % 2 !== 0;
+
+        gsap.set(bear, {
+          backgroundPosition: `${xPos}% 0`,
+          y: isUp ? -8 : 0
+        });
+      }
+    }, 0);
+
+    // 3. Rabbit horizontal movement (following behind bear)
+    if (rabbit) {
+      tl.to(rabbit, {
+        x: "140vw",
+        ease: "none",
+      }, 0);
+
+      // 4. Rabbit sprite animation
+      const rabbitSprite = { frame: 0 };
+      tl.to(rabbitSprite, {
+        frame: 24,
+        ease: "none",
         onUpdate: () => {
-          const currentFrame = Math.floor(spriteConfig.frame) % 6;
+          const currentFrame = Math.floor(rabbitSprite.frame) % 6;
           const xPos = currentFrame * 20;
           const isUp = currentFrame % 2 !== 0;
 
-          gsap.set(bear, {
+          gsap.set(rabbit, {
             backgroundPosition: `${xPos}% 0`,
-            y: isUp ? -8 : 0
+            y: isUp ? -10 : 0
           });
         }
-      }
-    });
-
-    // Rabbit horizontal movement (following behind bear)
-    if (rabbit) {
-      gsap.to(rabbit, {
-        x: "140vw",
-        ease: "none",
-        scrollTrigger: {
-          trigger: pinSection,
-          start: "center center",
-          end: "+=1200",
-          scrub: 1,
-        }
-      });
-
-      // Rabbit sprite animation (hopping slightly faster)
-      const rabbitSprite = { frame: 0 };
-      gsap.to(rabbitSprite, {
-        frame: 24,
-        ease: "none",
-        scrollTrigger: {
-          trigger: pinSection,
-          start: "center center",
-          end: "+=1200",
-          scrub: 1,
-          onUpdate: () => {
-            const currentFrame = Math.floor(rabbitSprite.frame) % 6;
-            const xPos = currentFrame * 20;
-            const isUp = currentFrame % 2 !== 0;
-
-            gsap.set(rabbit, {
-              backgroundPosition: `${xPos}% 0`,
-              y: isUp ? -10 : 0
-            });
-          }
-        }
-      });
+      }, 0);
     }
 
-    // Event Details card fade-in animation during the start of the pin
+    // 5. Event Details card fade-in animation
     if (detailsCard) {
-      gsap.fromTo(detailsCard, 
+      tl.fromTo(detailsCard, 
         { opacity: 0, scale: 0.85, y: 30 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: pinSection,
-            start: "center center",
-            end: "+=400",
-            scrub: 1,
-          }
-        }
+        { opacity: 1, scale: 1, y: 0, ease: "power2.out", duration: 0.3 },
+        0
       );
     }
 
