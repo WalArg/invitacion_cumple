@@ -9,7 +9,6 @@ function App() {
   const bearRef = useRef(null);
   const rabbitRef = useRef(null);
   const containerRef = useRef(null);
-  const bgRef = useRef(null);
   const pinRef = useRef(null);
   const detailsCardRef = useRef(null);
 
@@ -17,20 +16,10 @@ function App() {
     const bear = bearRef.current;
     const rabbit = rabbitRef.current;
     const container = containerRef.current;
-    const bg = bgRef.current;
     const pinSection = pinRef.current;
     const detailsCard = detailsCardRef.current;
 
     if (!bear || !container || !pinSection) return;
-
-    // Pin background image at the exact same time as bear pin section
-    ScrollTrigger.create({
-      trigger: pinSection,
-      start: "top top",
-      end: "+=1200",
-      pin: bg,
-      pinSpacing: false
-    });
 
     // Bear horizontal movement (Pinned Section)
     gsap.to(bear, {
@@ -131,7 +120,6 @@ function App() {
 
   return (
     <div className="main-wrapper" ref={containerRef}>
-      <div className="woodland-bg" ref={bgRef}></div>
 
       <div className="app-container">
         <div className="content-overlay">
@@ -150,7 +138,7 @@ function App() {
       </div>
 
       {/* Pinned Section for Bear, Rabbit & Event Details */}
-      <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <div className="bear-pin-section" ref={pinRef}>
         
         {/* Event Details Section appearing inside the pinned screen */}
         <div className="glass-card details-section" ref={detailsCardRef} style={{ width: '90%', maxWidth: '440px', zIndex: 15 }}>
