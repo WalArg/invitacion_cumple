@@ -41,21 +41,31 @@ function App() {
       }
     });
 
-    // Bear sprite animation (Infinite walking legs)
-    gsap.to(bear, {
-      backgroundPosition: "100% 0",
-      ease: "steps(5)",
-      repeat: -1,
-      duration: 0.8 // Normal walking speed
-    });
-
-    // Bear subtle bounce
-    gsap.to(bear, {
-      y: "-=16px",
-      duration: 0.4,
-      yoyo: true,
-      repeat: -1,
-      ease: "power1.inOut"
+    // Bear sprite animation tied strictly to scroll
+    const spriteConfig = { frame: 0 };
+    gsap.to(spriteConfig, {
+      frame: 60, // Total frames to walk across the 3000px scroll (10 full walk cycles)
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        start: "top top",
+        end: "+=3000",
+        scrub: 1, // Smooth matching to scroll speed
+        onUpdate: () => {
+          // Math.floor ensures it snaps perfectly to the frames (0 to 5)
+          const currentFrame = Math.floor(spriteConfig.frame) % 6; 
+          // Using exactly 20% steps for a 6-frame sprite sheet
+          const xPos = currentFrame * 20; 
+          
+          // Bounce effect tied directly to the walk cycle
+          const isUp = currentFrame % 2 !== 0;
+          
+          gsap.set(bear, {
+            backgroundPosition: `${xPos}% 0`,
+            y: isUp ? -12 : 0
+          });
+        }
+      }
     });
 
     return () => {
