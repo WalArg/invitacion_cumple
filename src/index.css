@@ -178,7 +178,7 @@ h2 {
 .baby-container {
   position: absolute;
   bottom: 8%;
-  left: -20px;
+  left: -10px;
   width: 65px;
   height: 130px;
   z-index: 22; /* Rendered in front of bear (z-index 20) and rabbit (z-index 18) */
@@ -194,31 +194,11 @@ h2 {
   background-repeat: no-repeat;
 }
 
-/* Rabbit Sprite Container (outer moves x, inner handles sprite & y bounce) */
-.rabbit-container {
-  position: absolute;
-  bottom: 8%;
-  left: -120px;
-  width: 55px;
-  height: 95px;
-  z-index: 18;
-  pointer-events: none;
-}
-
-.rabbit-sprite {
-  width: 100%;
-  height: 100%;
-  background-image: url('/conejo_caminando_png.png');
-  background-size: 600% 100%;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-}
-
 /* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .bear-container {
   position: absolute;
   bottom: 8%;
-  left: -70px;
+  left: -90px; /* 80px behind Baby Luca */
   width: 70px;
   height: 140px;
   z-index: 20;
@@ -229,6 +209,26 @@ h2 {
   width: 100%;
   height: 100%;
   background-image: url('/oso_caminando_png.png');
+  background-size: 600% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+/* Rabbit Sprite Container (outer moves x, inner handles sprite & y bounce) */
+.rabbit-container {
+  position: absolute;
+  bottom: 8%;
+  left: -170px; /* 80px behind Bear */
+  width: 55px;
+  height: 95px;
+  z-index: 18;
+  pointer-events: none;
+}
+
+.rabbit-sprite {
+  width: 100%;
+  height: 100%;
+  background-image: url('/conejo_caminando_png.png');
   background-size: 600% 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
