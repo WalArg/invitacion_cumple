@@ -146,7 +146,7 @@ function App() {
       {/* Pinned Section for Baby, Bear, Rabbit & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
         
-        {/* Event Details Section appearing inside the pinned screen */}
+        {/* Event Details Section positioned at the top of the mobile screen */}
         <div className="glass-card details-section" ref={detailsCardRef} style={{ width: '90%', maxWidth: '440px', zIndex: 15 }}>
           <h2>Detalles del evento</h2>
           <ul className="details-list">
@@ -159,20 +159,24 @@ function App() {
           </a>
         </div>
 
-        {/* Animated Baby Luca Sprite Container (leading in front) */}
-        <div className="baby-container" ref={babyRef}>
-          <div className="baby-sprite" ref={babySpriteRef}></div>
+        {/* Compact Woodland Box displaying crisp bosque3.png & animals */}
+        <div className="woodland-box">
+          {/* Animated Baby Luca Sprite Container (leading in front) */}
+          <div className="baby-container" ref={babyRef}>
+            <div className="baby-sprite" ref={babySpriteRef}></div>
+          </div>
+
+          {/* Animated Bear Sprite Container */}
+          <div className="bear-container" ref={bearRef}>
+            <div className="bear-sprite" ref={bearSpriteRef}></div>
+          </div>
+
+          {/* Animated Rabbit Sprite Container (behind bear) */}
+          <div className="rabbit-container" ref={rabbitRef}>
+            <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
+          </div>
         </div>
 
-        {/* Animated Bear Sprite Container */}
-        <div className="bear-container" ref={bearRef}>
-          <div className="bear-sprite" ref={bearSpriteRef}></div>
-        </div>
-
-        {/* Animated Rabbit Sprite Container (behind bear) */}
-        <div className="rabbit-container" ref={rabbitRef}>
-          <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
-        </div>
       </div>
 
       <div className="app-container">
