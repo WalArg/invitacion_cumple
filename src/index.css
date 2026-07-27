@@ -38,12 +38,11 @@ body {
   z-index: 2;
 }
 
-/* Woodland background for the pinned section (with soft watercolor edge blending and larger mobile height) */
+/* Woodland background for the pinned section (full screen height with details card at top) */
 .bear-pin-section {
   position: relative;
   width: 100%;
-  min-height: 380px;
-  height: 50vh;
+  height: 100vh;
   background-image: url('/bosque3.png');
   background-size: cover;
   background-position: center center;
@@ -53,12 +52,11 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding-top: 15px;
+  padding-top: 65px;
   overflow: visible;
-  margin: 30px 0;
-  /* Seamless watercolor fade on top & bottom edges to eliminate any sharp cuts/seams */
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%);
+  /* Seamless watercolor fade on top & bottom edges */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 /* Content overlay */

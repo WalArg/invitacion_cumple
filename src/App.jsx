@@ -33,7 +33,7 @@ function App() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
-        start: "center center",
+        start: "top top",
         end: "+=1200",
         pin: true,
         scrub: 1,
