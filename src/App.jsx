@@ -7,6 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const bearRef = useRef(null);
+  const rabbitRef = useRef(null);
   const containerRef = useRef(null);
   const bgRef = useRef(null);
   const pinRef = useRef(null);
@@ -14,6 +15,7 @@ function App() {
 
   useEffect(() => {
     const bear = bearRef.current;
+    const rabbit = rabbitRef.current;
     const container = containerRef.current;
     const bg = bgRef.current;
     const pinSection = pinRef.current;
@@ -66,6 +68,43 @@ function App() {
       }
     });
 
+    // Rabbit horizontal movement (following behind bear)
+    if (rabbit) {
+      gsap.to(rabbit, {
+        x: "140vw",
+        ease: "none",
+        scrollTrigger: {
+          trigger: pinSection,
+          start: "top top",
+          end: "+=1200",
+          scrub: 1,
+        }
+      });
+
+      // Rabbit sprite animation (hopping slightly faster)
+      const rabbitSprite = { frame: 0 };
+      gsap.to(rabbitSprite, {
+        frame: 24,
+        ease: "none",
+        scrollTrigger: {
+          trigger: pinSection,
+          start: "top top",
+          end: "+=1200",
+          scrub: 1,
+          onUpdate: () => {
+            const currentFrame = Math.floor(rabbitSprite.frame) % 6;
+            const xPos = currentFrame * 20;
+            const isUp = currentFrame % 2 !== 0;
+
+            gsap.set(rabbit, {
+              backgroundPosition: `${xPos}% 0`,
+              y: isUp ? -10 : 0
+            });
+          }
+        }
+      });
+    }
+
     // Event Details card fade-in animation during the start of the pin
     if (detailsCard) {
       gsap.fromTo(detailsCard, 
@@ -110,7 +149,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Bear & Event Details */}
+      {/* Pinned Section for Bear, Rabbit & Event Details */}
       <div className="bear-pin-section" ref={pinRef} style={{ position: 'relative', width: '100%', height: '100vh', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
         
         {/* Event Details Section appearing inside the pinned screen */}
@@ -125,6 +164,9 @@ function App() {
             Ver en Google Maps
           </a>
         </div>
+
+        {/* Animated Rabbit Sprite Container (behind bear) */}
+        <div className="rabbit-container" ref={rabbitRef}></div>
 
         {/* Animated Bear Sprite Container */}
         <div className="bear-container" ref={bearRef}></div>

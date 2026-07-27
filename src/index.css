@@ -165,6 +165,20 @@ h2 {
   60% { transform: translateY(-4px); }
 }
 
+/* Rabbit Sprite Container */
+.rabbit-container {
+  position: absolute;
+  bottom: 12%;
+  left: -200px; /* Positioned further left so it trails behind the bear */
+  width: 70px;
+  height: 120px;
+  background-image: url('/conejo_caminando_png.png');
+  background-size: 600% 100%; /* 6 frames */
+  background-position: 0 0;
+  z-index: 18; /* Rendered behind the bear (z-index 20) */
+  opacity: 1 !important;
+}
+
 /* Bear Sprite Container */
 .bear-container {
   position: absolute;
