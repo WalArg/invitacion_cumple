@@ -25,33 +25,33 @@ function App() {
     ScrollTrigger.create({
       trigger: pinSection,
       start: "top top",
-      end: "+=2000",
+      end: "+=1200",
       pin: bg,
       pinSpacing: false
     });
 
     // Bear horizontal movement (Pinned Section)
     gsap.to(bear, {
-      x: "150vw",
+      x: "calc(100vw + 140px)",
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: "+=2000",
+        end: "+=1200",
         pin: true,
         scrub: 1,
       }
     });
 
-    // Bear sprite animation tied strictly to the same pin scroll
+    // Bear sprite animation (Paced for mobile: 18 frames = 3 natural walk cycles)
     const spriteConfig = { frame: 0 };
     gsap.to(spriteConfig, {
-      frame: 45,
+      frame: 18,
       ease: "none",
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: "+=2000",
+        end: "+=1200",
         scrub: 1,
         onUpdate: () => {
           const currentFrame = Math.floor(spriteConfig.frame) % 6;
@@ -60,7 +60,7 @@ function App() {
 
           gsap.set(bear, {
             backgroundPosition: `${xPos}% 0`,
-            y: isUp ? -12 : 0
+            y: isUp ? -8 : 0
           });
         }
       }
@@ -69,7 +69,7 @@ function App() {
     // Event Details card fade-in animation during the start of the pin
     if (detailsCard) {
       gsap.fromTo(detailsCard, 
-        { opacity: 0, scale: 0.8, y: 40 },
+        { opacity: 0, scale: 0.85, y: 30 },
         {
           opacity: 1,
           scale: 1,
@@ -78,7 +78,7 @@ function App() {
           scrollTrigger: {
             trigger: pinSection,
             start: "top top",
-            end: "+=600",
+            end: "+=400",
             scrub: 1,
           }
         }
