@@ -199,7 +199,7 @@ h2 {
 .bear-container {
   position: absolute;
   bottom: 8%;
-  left: -230px; /* Equalized 80px gap behind Baby */
+  left: -210px; /* Equalized 60px gap behind Baby */
   width: 140px;
   height: 280px;
   z-index: 20;
@@ -219,7 +219,7 @@ h2 {
 .rabbit-container {
   position: absolute;
   bottom: 8%;
-  left: -365px; /* Equalized 80px gap behind Bear */
+  left: -325px; /* Equalized 60px gap behind Bear */
   width: 55px;
   height: 95px;
   z-index: 18;
@@ -239,7 +239,7 @@ h2 {
 .bambi-container {
   position: absolute;
   bottom: 8%;
-  left: -585px; /* Equalized 80px gap behind Rabbit */
+  left: -525px; /* Equalized 60px gap behind Rabbit */
   width: 140px;
   height: 210px;
   z-index: 16;
@@ -259,7 +259,7 @@ h2 {
 .hedgehog-container {
   position: absolute;
   bottom: 8%;
-  left: -715px; /* Equalized 80px gap behind Bambi */
+  left: -635px; /* Equalized 60px gap behind Bambi */
   width: 50px;
   height: 82px;
   z-index: 15;
@@ -279,7 +279,7 @@ h2 {
 .fox-container {
   position: absolute;
   bottom: 8%;
-  left: -908px; /* Equalized 80px gap behind Hedgehog */
+  left: -808px; /* Equalized 60px gap behind Hedgehog */
   width: 113px;
   height: 135px;
   z-index: 14;
