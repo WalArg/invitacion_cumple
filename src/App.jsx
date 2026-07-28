@@ -14,6 +14,8 @@ function App() {
   const rabbitSpriteRef = useRef(null);
   const bambiRef = useRef(null);
   const bambiSpriteRef = useRef(null);
+  const hedgehogRef = useRef(null);
+  const hedgehogSpriteRef = useRef(null);
   const foxRef = useRef(null);
   const foxSpriteRef = useRef(null);
   const containerRef = useRef(null);
@@ -29,6 +31,8 @@ function App() {
     const rabbitSprite = rabbitSpriteRef.current;
     const bambi = bambiRef.current;
     const bambiSprite = bambiSpriteRef.current;
+    const hedgehog = hedgehogRef.current;
+    const hedgehogSprite = hedgehogSpriteRef.current;
     const fox = foxRef.current;
     const foxSprite = foxSpriteRef.current;
     const container = containerRef.current;
@@ -42,7 +46,7 @@ function App() {
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: "+=1400",
+        end: "+=1600",
         pin: true,
         scrub: 1,
       }
@@ -51,7 +55,7 @@ function App() {
     // 1. Baby Luca horizontal movement (Leading the parade)
     if (baby) {
       tl.to(baby, {
-        x: "215vw",
+        x: "230vw",
         ease: "none",
       }, 0);
 
@@ -74,7 +78,7 @@ function App() {
 
     // 2. Bear horizontal movement
     tl.to(bear, {
-      x: "215vw",
+      x: "230vw",
       ease: "none",
     }, 0);
 
@@ -97,7 +101,7 @@ function App() {
     // 3. Rabbit horizontal movement (following behind bear)
     if (rabbit) {
       tl.to(rabbit, {
-        x: "215vw",
+        x: "230vw",
         ease: "none",
       }, 0);
 
@@ -121,7 +125,7 @@ function App() {
     // 4. Bambi (deer) horizontal movement (following behind rabbit)
     if (bambi) {
       tl.to(bambi, {
-        x: "215vw",
+        x: "230vw",
         ease: "none",
       }, 0);
 
@@ -142,10 +146,34 @@ function App() {
       }, 0);
     }
 
-    // 5. Fox horizontal movement (following behind bambi deer)
+    // 5. Hedgehog horizontal movement (behind bambi deer, in front of fox)
+    if (hedgehog) {
+      tl.to(hedgehog, {
+        x: "230vw",
+        ease: "none",
+      }, 0);
+
+      // Hedgehog sprite animation
+      const hedgehogSpriteConfig = { frame: 0 };
+      tl.to(hedgehogSpriteConfig, {
+        frame: 24,
+        ease: "none",
+        onUpdate: () => {
+          if (!hedgehogSprite) return;
+          const currentFrame = Math.floor(hedgehogSpriteConfig.frame) % 6;
+          const xPos = currentFrame * 20;
+          const isUp = currentFrame % 2 !== 0;
+
+          hedgehogSprite.style.backgroundPosition = `${xPos}% 0`;
+          hedgehogSprite.style.transform = `translateY(${isUp ? -4 : 0}px)`;
+        }
+      }, 0);
+    }
+
+    // 6. Fox horizontal movement (following behind hedgehog)
     if (fox) {
       tl.to(fox, {
-        x: "215vw",
+        x: "230vw",
         ease: "none",
       }, 0);
 
@@ -166,7 +194,7 @@ function App() {
       }, 0);
     }
 
-    // 6. Event Details card fade-in animation
+    // 7. Event Details card fade-in animation
     if (detailsCard) {
       tl.fromTo(detailsCard, 
         { opacity: 0, scale: 0.85, y: 30 },
@@ -199,7 +227,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Fox & Event Details */}
+      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
         
         {/* Event Details Section positioned at the top of the mobile screen */}
@@ -235,7 +263,12 @@ function App() {
           <div className="bambi-sprite" ref={bambiSpriteRef}></div>
         </div>
 
-        {/* Animated Fox Sprite Container (behind bambi deer) */}
+        {/* Animated Hedgehog Sprite Container (behind bambi deer, in front of fox) */}
+        <div className="hedgehog-container" ref={hedgehogRef}>
+          <div className="hedgehog-sprite" ref={hedgehogSpriteRef}></div>
+        </div>
+
+        {/* Animated Fox Sprite Container (behind hedgehog) */}
         <div className="fox-container" ref={foxRef}>
           <div className="fox-sprite" ref={foxSpriteRef}></div>
         </div>
