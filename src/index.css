@@ -33,6 +33,7 @@ body {
   min-height: 100vh;
   padding-bottom: 80vh;
   background-color: var(--color-bg);
+  overflow: hidden; /* Clips off-screen translated elements to prevent touch scroll locking */
 }
 
 /* Mobile-first container */
@@ -58,6 +59,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding-top: 40px;
+  overflow: hidden; /* Clips animals as soon as they exit the section boundary */
 }
 
 /* Content overlay */
