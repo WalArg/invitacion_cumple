@@ -14,6 +14,10 @@
   padding: 0;
 }
 
+html, body {
+  overscroll-behavior-y: none; /* Prevents mobile browser rubber-band bounce backwards */
+}
+
 body {
   font-family: var(--font-main);
   color: var(--color-text);
@@ -22,11 +26,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Main wrapper for full-width background */
+/* Main wrapper for full-width background with ample bottom scroll headroom */
 .main-wrapper {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  padding-bottom: 80vh;
   background-color: var(--color-bg);
 }
 

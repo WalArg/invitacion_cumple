@@ -41,13 +41,14 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Single Master Timeline for the Pinned Section (Fast, responsive pin duration for mobile)
+    // Single Master Timeline for the Pinned Section
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
         end: "+=900",
         pin: true,
+        anticipatePin: 1,
         scrub: 1,
       }
     });
@@ -293,8 +294,8 @@ function App() {
             </a>
           </div>
 
-          {/* Ample bottom margin to guarantee complete mobile scrolling */}
-          <div style={{ height: '60vh' }}></div>
+          {/* Extra scroll space */}
+          <div style={{ height: '40vh' }}></div>
 
         </div>
       </div>
