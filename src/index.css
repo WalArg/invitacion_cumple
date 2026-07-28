@@ -192,7 +192,7 @@ h2 {
 .bear-container {
   position: absolute;
   bottom: 8%;
-  left: -160px;
+  left: -120px;
   width: 140px;
   height: 280px;
   z-index: 20;
@@ -212,7 +212,7 @@ h2 {
 .rabbit-container {
   position: absolute;
   bottom: 8%;
-  left: -240px;
+  left: -180px;
   width: 55px;
   height: 95px;
   z-index: 18;
@@ -232,7 +232,7 @@ h2 {
 .bambi-container {
   position: absolute;
   bottom: 8%;
-  left: -400px;
+  left: -310px;
   width: 140px;
   height: 210px;
   z-index: 16;
@@ -252,7 +252,7 @@ h2 {
 .hedgehog-container {
   position: absolute;
   bottom: 8%;
-  left: -480px;
+  left: -370px;
   width: 50px;
   height: 82px;
   z-index: 15;
@@ -272,7 +272,7 @@ h2 {
 .fox-container {
   position: absolute;
   bottom: 8%;
-  left: -640px; /* Equalized 160px separation behind Hedgehog */
+  left: -480px;
   width: 113px;
   height: 135px;
   z-index: 14;

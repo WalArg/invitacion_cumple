@@ -41,12 +41,12 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Single Master Timeline for the Pinned Section
+    // Single Master Timeline for the Pinned Section (Sleek, fluid pin duration)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: "+=1700",
+        end: "+=1200",
         pin: true,
         scrub: 1,
       }
@@ -55,7 +55,7 @@ function App() {
     // 1. Baby Luca horizontal movement (Leading the parade)
     if (baby) {
       tl.to(baby, {
-        x: "245vw",
+        x: "215vw",
         ease: "none",
       }, 0);
 
@@ -78,7 +78,7 @@ function App() {
 
     // 2. Bear horizontal movement
     tl.to(bear, {
-      x: "245vw",
+      x: "215vw",
       ease: "none",
     }, 0);
 
@@ -101,7 +101,7 @@ function App() {
     // 3. Rabbit horizontal movement (following behind bear)
     if (rabbit) {
       tl.to(rabbit, {
-        x: "245vw",
+        x: "215vw",
         ease: "none",
       }, 0);
 
@@ -125,7 +125,7 @@ function App() {
     // 4. Bambi (deer) horizontal movement (following behind rabbit)
     if (bambi) {
       tl.to(bambi, {
-        x: "245vw",
+        x: "215vw",
         ease: "none",
       }, 0);
 
@@ -149,7 +149,7 @@ function App() {
     // 5. Hedgehog horizontal movement (behind bambi deer, in front of fox)
     if (hedgehog) {
       tl.to(hedgehog, {
-        x: "245vw",
+        x: "215vw",
         ease: "none",
       }, 0);
 
@@ -173,7 +173,7 @@ function App() {
     // 6. Fox horizontal movement (following behind hedgehog)
     if (fox) {
       tl.to(fox, {
-        x: "245vw",
+        x: "215vw",
         ease: "none",
       }, 0);
 
@@ -222,7 +222,7 @@ function App() {
           </div>
 
           {/* Spacer before bear pin */}
-          <div style={{ height: '20vh' }}></div>
+          <div style={{ height: '15vh' }}></div>
 
         </div>
       </div>
@@ -279,7 +279,7 @@ function App() {
         <div className="content-overlay">
 
           {/* Spacer after bear pin */}
-          <div style={{ height: '20vh' }}></div>
+          <div style={{ height: '10vh' }}></div>
 
           {/* RSVP Section */}
           <div className="glass-card rsvp-section">
@@ -293,8 +293,8 @@ function App() {
             </a>
           </div>
 
-          {/* Spacer */}
-          <div style={{ height: '20vh' }}></div>
+          {/* Generous bottom margin so the page can scroll completely to the end */}
+          <div style={{ height: '40vh' }}></div>
 
         </div>
       </div>
