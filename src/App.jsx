@@ -47,7 +47,7 @@ function App() {
     // 1. Baby Luca horizontal movement (Leading the parade)
     if (baby) {
       tl.to(baby, {
-        x: "165vw",
+        x: "185vw",
         ease: "none",
       }, 0);
 
@@ -70,7 +70,7 @@ function App() {
 
     // 2. Bear horizontal movement
     tl.to(bear, {
-      x: "165vw",
+      x: "185vw",
       ease: "none",
     }, 0);
 
@@ -93,7 +93,7 @@ function App() {
     // 3. Rabbit horizontal movement (following behind bear)
     if (rabbit) {
       tl.to(rabbit, {
-        x: "165vw",
+        x: "185vw",
         ease: "none",
       }, 0);
 
@@ -117,7 +117,7 @@ function App() {
     // 4. Bambi (deer) horizontal movement (following behind rabbit)
     if (bambi) {
       tl.to(bambi, {
-        x: "165vw",
+        x: "185vw",
         ease: "none",
       }, 0);
 

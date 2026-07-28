@@ -188,13 +188,13 @@ h2 {
   background-repeat: no-repeat;
 }
 
-/* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) */
+/* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) - DOUBLE SIZE */
 .bear-container {
   position: absolute;
   bottom: 8%;
-  left: -90px; /* 80px behind Baby Luca */
-  width: 70px;
-  height: 140px;
+  left: -160px;
+  width: 140px;
+  height: 280px;
   z-index: 20;
   pointer-events: none;
 }
@@ -212,7 +212,7 @@ h2 {
 .rabbit-container {
   position: absolute;
   bottom: 8%;
-  left: -170px; /* 80px behind Bear */
+  left: -240px;
   width: 55px;
   height: 95px;
   z-index: 18;
@@ -228,13 +228,13 @@ h2 {
   background-repeat: no-repeat;
 }
 
-/* Bambi Sprite Container (following behind rabbit) */
+/* Bambi Sprite Container (following behind rabbit) - DOUBLE SIZE */
 .bambi-container {
   position: absolute;
   bottom: 8%;
-  left: -250px; /* 80px behind Rabbit */
-  width: 70px;
-  height: 105px;
+  left: -400px;
+  width: 140px;
+  height: 210px;
   z-index: 16;
   pointer-events: none;
 }
