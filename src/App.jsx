@@ -14,6 +14,8 @@ function App() {
   const rabbitSpriteRef = useRef(null);
   const bambiRef = useRef(null);
   const bambiSpriteRef = useRef(null);
+  const foxRef = useRef(null);
+  const foxSpriteRef = useRef(null);
   const containerRef = useRef(null);
   const pinRef = useRef(null);
   const detailsCardRef = useRef(null);
@@ -27,6 +29,8 @@ function App() {
     const rabbitSprite = rabbitSpriteRef.current;
     const bambi = bambiRef.current;
     const bambiSprite = bambiSpriteRef.current;
+    const fox = foxRef.current;
+    const foxSprite = foxSpriteRef.current;
     const container = containerRef.current;
     const pinSection = pinRef.current;
     const detailsCard = detailsCardRef.current;
@@ -38,7 +42,7 @@ function App() {
       scrollTrigger: {
         trigger: pinSection,
         start: "top top",
-        end: "+=1200",
+        end: "+=1400",
         pin: true,
         scrub: 1,
       }
@@ -47,7 +51,7 @@ function App() {
     // 1. Baby Luca horizontal movement (Leading the parade)
     if (baby) {
       tl.to(baby, {
-        x: "185vw",
+        x: "200vw",
         ease: "none",
       }, 0);
 
@@ -70,7 +74,7 @@ function App() {
 
     // 2. Bear horizontal movement
     tl.to(bear, {
-      x: "185vw",
+      x: "200vw",
       ease: "none",
     }, 0);
 
@@ -93,7 +97,7 @@ function App() {
     // 3. Rabbit horizontal movement (following behind bear)
     if (rabbit) {
       tl.to(rabbit, {
-        x: "185vw",
+        x: "200vw",
         ease: "none",
       }, 0);
 
@@ -117,7 +121,7 @@ function App() {
     // 4. Bambi (deer) horizontal movement (following behind rabbit)
     if (bambi) {
       tl.to(bambi, {
-        x: "185vw",
+        x: "200vw",
         ease: "none",
       }, 0);
 
@@ -138,7 +142,31 @@ function App() {
       }, 0);
     }
 
-    // 5. Event Details card fade-in animation
+    // 5. Fox horizontal movement (following behind bambi deer)
+    if (fox) {
+      tl.to(fox, {
+        x: "200vw",
+        ease: "none",
+      }, 0);
+
+      // Fox sprite animation
+      const foxSpriteConfig = { frame: 0 };
+      tl.to(foxSpriteConfig, {
+        frame: 22,
+        ease: "none",
+        onUpdate: () => {
+          if (!foxSprite) return;
+          const currentFrame = Math.floor(foxSpriteConfig.frame) % 6;
+          const xPos = currentFrame * 20;
+          const isUp = currentFrame % 2 !== 0;
+
+          foxSprite.style.backgroundPosition = `${xPos}% 0`;
+          foxSprite.style.transform = `translateY(${isUp ? -6 : 0}px)`;
+        }
+      }, 0);
+    }
+
+    // 6. Event Details card fade-in animation
     if (detailsCard) {
       tl.fromTo(detailsCard, 
         { opacity: 0, scale: 0.85, y: 30 },
@@ -171,7 +199,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Baby, Bear, Rabbit, Bambi & Event Details */}
+      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Fox & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
         
         {/* Event Details Section positioned at the top of the mobile screen */}
@@ -205,6 +233,11 @@ function App() {
         {/* Animated Bambi Deer Sprite Container (behind rabbit) */}
         <div className="bambi-container" ref={bambiRef}>
           <div className="bambi-sprite" ref={bambiSpriteRef}></div>
+        </div>
+
+        {/* Animated Fox Sprite Container (behind bambi deer) */}
+        <div className="fox-container" ref={foxRef}>
+          <div className="fox-sprite" ref={foxSpriteRef}></div>
         </div>
 
       </div>
