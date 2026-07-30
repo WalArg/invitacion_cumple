@@ -256,13 +256,6 @@ function App() {
             AGENDAR
           </a>
 
-          {/* Leaf Divider */}
-          <div className="leaf-divider">
-            <span className="line"></span>
-            <span className="leaf-icon">🍃</span>
-            <span className="line"></span>
-          </div>
-
           {/* Location Pin Icon */}
           <div className="location-pin-icon">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
