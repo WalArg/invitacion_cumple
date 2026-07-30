@@ -149,11 +149,11 @@ body {
 .bear-pin-section {
   position: relative;
   width: 100%;
-  height: 75vh;
-  margin-top: -90px; /* Pulls forest way up behind AGENDAR to completely eliminate white space */
+  height: 45vh; /* Reduced height to crop out the white sky at the top of the image */
+  margin-top: 5px; /* Sits exactly below AGENDAR */
   background-image: url('/bosque3.png');
-  background-size: 100% auto; /* 100% screen width, natural un-zoomed height */
-  background-position: center 85%; /* Displays green forest clearing right at the top */
+  background-size: cover; /* Zoom in slightly to fill container entirely, eliminating any white edges */
+  background-position: center bottom; /* Anchors the green grass to the bottom */
   background-repeat: no-repeat;
   z-index: 10;
   display: flex;
@@ -426,7 +426,7 @@ h2 {
 /* Baby Sprite Container (leading the parade) */
 .baby-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -10px;
   width: 65px;
   height: 130px;
@@ -446,7 +446,7 @@ h2 {
 /* Bear Sprite Container (outer moves x, inner handles sprite & y bounce) - DOUBLE SIZE */
 .bear-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -210px; /* Equalized 60px gap behind Baby */
   width: 140px;
   height: 280px;
@@ -466,7 +466,7 @@ h2 {
 /* Rabbit Sprite Container (outer moves x, inner handles sprite & y bounce) */
 .rabbit-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -325px; /* Equalized 60px gap behind Bear */
   width: 55px;
   height: 95px;
@@ -486,7 +486,7 @@ h2 {
 /* Bambi Sprite Container (following behind rabbit) - DOUBLE SIZE */
 .bambi-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -525px; /* Equalized 60px gap behind Rabbit */
   width: 140px;
   height: 210px;
@@ -506,7 +506,7 @@ h2 {
 /* Hedgehog Sprite Container (behind bambi deer, in front of fox) */
 .hedgehog-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -635px; /* Equalized 60px gap behind Bambi */
   width: 50px;
   height: 82px;
@@ -526,7 +526,7 @@ h2 {
 /* Fox Sprite Container (following behind hedgehog) - 1.5X SIZE */
 .fox-container {
   position: absolute;
-  bottom: 14%;
+  bottom: 5%;
   left: -808px; /* Equalized 60px gap behind Hedgehog */
   width: 113px;
   height: 135px;
