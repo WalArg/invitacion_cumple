@@ -39,7 +39,7 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Single Master Timeline for the Pinned Section (Fast, responsive pin duration for mobile)
+    // Single Master Timeline for the Pinned Section (Parade of 6 animals)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
@@ -215,7 +215,7 @@ function App() {
         
         {/* Date & AGENDAR Section */}
         <div className="app-container">
-          <div className="content-overlay" style={{ gap: '20px', padding: '35px 16px 20px 16px' }}>
+          <div className="content-overlay" style={{ gap: '15px', padding: '30px 16px 5px 16px' }}>
             <div className="details-section-wrapper">
               <div className="details-month">NOVIEMBRE</div>
 
@@ -249,7 +249,7 @@ function App() {
           </div>
         </div>
 
-        {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
+        {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade (Attached right below AGENDAR) */}
         <div className="bear-pin-section" ref={pinRef}>
           
           {/* Animated Baby Luca Sprite Container (leading in front) */}
@@ -284,9 +284,9 @@ function App() {
 
         </div>
 
-        {/* Location & VER EN GOOGLE MAPS Section */}
+        {/* Location & VER EN GOOGLE MAPS Section (Appears naturally right after the forest parade with 0 animation effects) */}
         <div className="app-container">
-          <div className="content-overlay" style={{ gap: '20px', padding: '25px 16px 40px 16px' }}>
+          <div className="content-overlay" style={{ gap: '20px', padding: '10px 16px 40px 16px' }}>
 
             <div className="details-section-wrapper">
               <div className="location-pin-icon">
