@@ -289,7 +289,7 @@ function App() {
         </div>
 
         {/* Location & VER EN GOOGLE MAPS Section (Appears naturally right after the forest parade with 0 animation effects) */}
-        <div className="app-container" style={{ marginTop: '-15px', zIndex: 30 }}>
+        <div className="app-container" style={{ marginTop: '25px', zIndex: 30 }}>
           <div className="content-overlay" style={{ gap: '10px', padding: '0px 16px 20px 16px' }}>
 
             <div className="details-section-wrapper">
