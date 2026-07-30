@@ -215,7 +215,7 @@ function App() {
         
         {/* Date & AGENDAR Section */}
         <div className="app-container">
-          <div className="content-overlay" style={{ gap: '15px', padding: '30px 16px 5px 16px' }}>
+          <div className="content-overlay" style={{ gap: '0px', padding: '25px 16px 0px 16px' }}>
             <div className="details-section-wrapper">
               <div className="details-month">NOVIEMBRE</div>
 
