@@ -218,7 +218,6 @@ function App() {
           <h1 className="luca-title">Luca</h1>
           <p className="subtitle-primer-ano">Te invito a</p>
           <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
-          <div className="scroll-indicator-hero">Deslizá hacia abajo 👇</div>
         </div>
       </div>
 
