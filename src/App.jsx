@@ -207,9 +207,9 @@ VERSION:2.0
 BEGIN:VEVENT
 SUMMARY:Cumple de Luca 1 añito 🎂
 DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!
-LOCATION:Av. Vergara 5415, Hurling Club
+LOCATION:Paso Morales 620
 DTSTART:20260920T183000Z
-DTEND:20260920T223000Z
+DTEND:20260920T220000Z
 END:VEVENT
 END:VCALENDAR`;
 
@@ -324,12 +324,11 @@ END:VCALENDAR`;
               </div>
 
               <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
-              <div className="location-address">AV. VERGARA 5415</div>
-              <div className="location-address">HURLING CLUB</div>
+              <div className="location-address">PASO MORALES 620</div>
 
               {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club"
+                href="https://www.google.com/maps/search/?api=1&query=Paso+Morales+620"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-agendar btn-maps"
