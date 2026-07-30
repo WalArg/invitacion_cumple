@@ -51,13 +51,13 @@ body {
   min-height: 100vh;
   background-image: url('/luca.png');
   background-size: cover;
-  background-position: center center;
+  background-position: center 25%; /* Positions Luca's face lower down on the screen */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 60px 16px 40px 16px;
+  padding: 50px 16px 40px 16px;
   box-sizing: border-box;
 }
 
