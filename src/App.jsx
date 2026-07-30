@@ -210,109 +210,115 @@ function App() {
         </div>
       </div>
 
-      {/* Screen 2: Full-screen Date & AGENDAR Section with snap transition */}
-      <div className="date-screen-wrapper">
-        <div className="app-container">
-          <div className="details-section-wrapper">
-            <div className="details-month">NOVIEMBRE</div>
-
-            <div className="details-date-grid">
-              <div className="date-side-col">
-                <div className="divider-line"></div>
-                <span className="date-label">SÁBADO</span>
-                <div className="divider-line"></div>
-              </div>
-
-              <div className="date-center-number">15</div>
-
-              <div className="date-side-col">
-                <div className="divider-line"></div>
-                <span className="date-label">16:00 HRS</span>
-                <div className="divider-line"></div>
-              </div>
-            </div>
-
-            <div className="details-year">2026</div>
-
-            {/* AGENDAR Button (Downloads calendar event) */}
-            <a 
-              href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR" 
-              download="cumple_luca.ics" 
-              className="btn-agendar"
-            >
-              AGENDAR
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Screen 3: Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
-      <div className="bear-pin-section" ref={pinRef}>
+      {/* Screen 2: Date, AGENDAR, Forest Parade, Location & VER EN GOOGLE MAPS */}
+      <div className="screen-2-wrapper">
         
-        {/* Animated Baby Luca Sprite Container (leading in front) */}
-        <div className="baby-container" ref={babyRef}>
-          <div className="baby-sprite" ref={babySpriteRef}></div>
+        {/* Date & AGENDAR Section */}
+        <div className="app-container">
+          <div className="content-overlay" style={{ gap: '20px', padding: '35px 16px 20px 16px' }}>
+            <div className="details-section-wrapper">
+              <div className="details-month">NOVIEMBRE</div>
+
+              <div className="details-date-grid">
+                <div className="date-side-col">
+                  <div className="divider-line"></div>
+                  <span className="date-label">SÁBADO</span>
+                  <div className="divider-line"></div>
+                </div>
+
+                <div className="date-center-number">15</div>
+
+                <div className="date-side-col">
+                  <div className="divider-line"></div>
+                  <span className="date-label">16:00 HRS</span>
+                  <div className="divider-line"></div>
+                </div>
+              </div>
+
+              <div className="details-year">2026</div>
+
+              {/* AGENDAR Button (Downloads calendar event) */}
+              <a 
+                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR" 
+                download="cumple_luca.ics" 
+                className="btn-agendar"
+              >
+                AGENDAR
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Animated Bear Sprite Container */}
-        <div className="bear-container" ref={bearRef}>
-          <div className="bear-sprite" ref={bearSpriteRef}></div>
+        {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
+        <div className="bear-pin-section" ref={pinRef}>
+          
+          {/* Animated Baby Luca Sprite Container (leading in front) */}
+          <div className="baby-container" ref={babyRef}>
+            <div className="baby-sprite" ref={babySpriteRef}></div>
+          </div>
+
+          {/* Animated Bear Sprite Container */}
+          <div className="bear-container" ref={bearRef}>
+            <div className="bear-sprite" ref={bearSpriteRef}></div>
+          </div>
+
+          {/* Animated Rabbit Sprite Container (behind bear) */}
+          <div className="rabbit-container" ref={rabbitRef}>
+            <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
+          </div>
+
+          {/* Animated Bambi Deer Sprite Container (behind rabbit) */}
+          <div className="bambi-container" ref={bambiRef}>
+            <div className="bambi-sprite" ref={bambiSpriteRef}></div>
+          </div>
+
+          {/* Animated Hedgehog Sprite Container (behind bambi deer, in front of fox) */}
+          <div className="hedgehog-container" ref={hedgehogRef}>
+            <div className="hedgehog-sprite" ref={hedgehogSpriteRef}></div>
+          </div>
+
+          {/* Animated Fox Sprite Container (behind hedgehog) */}
+          <div className="fox-container" ref={foxRef}>
+            <div className="fox-sprite" ref={foxSpriteRef}></div>
+          </div>
+
         </div>
 
-        {/* Animated Rabbit Sprite Container (behind bear) */}
-        <div className="rabbit-container" ref={rabbitRef}>
-          <div className="rabbit-sprite" ref={rabbitSpriteRef}></div>
-        </div>
+        {/* Location & VER EN GOOGLE MAPS Section */}
+        <div className="app-container">
+          <div className="content-overlay" style={{ gap: '20px', padding: '25px 16px 40px 16px' }}>
 
-        {/* Animated Bambi Deer Sprite Container (behind rabbit) */}
-        <div className="bambi-container" ref={bambiRef}>
-          <div className="bambi-sprite" ref={bambiSpriteRef}></div>
-        </div>
+            <div className="details-section-wrapper">
+              <div className="location-pin-icon">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
 
-        {/* Animated Hedgehog Sprite Container (behind bambi deer, in front of fox) */}
-        <div className="hedgehog-container" ref={hedgehogRef}>
-          <div className="hedgehog-sprite" ref={hedgehogSpriteRef}></div>
-        </div>
+              <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
+              <div className="location-address">AV. VERGARA 5415</div>
+              <div className="location-address">HURLING CLUB</div>
 
-        {/* Animated Fox Sprite Container (behind hedgehog) */}
-        <div className="fox-container" ref={foxRef}>
-          <div className="fox-sprite" ref={foxSpriteRef}></div>
+              {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
+              <a 
+                href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-agendar btn-maps"
+              >
+                VER EN GOOGLE MAPS
+              </a>
+            </div>
+
+          </div>
         </div>
 
       </div>
 
-      {/* Screen 4: Location, VER EN GOOGLE MAPS & RSVP Section */}
-      <div className="app-container">
-        <div className="content-overlay" style={{ gap: '30px', padding: '25px 16px' }}>
-
-          {/* Location Pin Icon & Details */}
-          <div className="details-section-wrapper">
-            <div className="location-pin-icon">
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-
-            <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
-            <div className="location-address">AV. VERGARA 5415</div>
-            <div className="location-address">HURLING CLUB</div>
-
-            {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
-            <a 
-              href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-agendar btn-maps"
-            >
-              VER EN GOOGLE MAPS
-            </a>
-          </div>
-
-          {/* Spacer before RSVP */}
-          <div style={{ height: '2vh' }}></div>
-
-          {/* RSVP Section */}
+      {/* Screen 3: WhatsApp RSVP Section */}
+      <div className="screen-3-wrapper">
+        <div className="app-container">
           <div className="glass-card rsvp-section">
             <h2>Confirmar Asistencia</h2>
             <p style={{ marginBottom: '20px' }}>Por favor, confirmanos tu presencia antes del 10 de Noviembre.</p>

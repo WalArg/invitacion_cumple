@@ -46,7 +46,7 @@ body {
   overflow: hidden; /* Clips off-screen translated elements to prevent touch scroll locking */
 }
 
-/* Hero Header Container with luca.png background at the very top */
+/* Screen 1: Hero Header Container with luca.png background */
 .hero-header-wrapper {
   position: relative;
   width: 100%;
@@ -65,8 +65,16 @@ body {
   scroll-snap-stop: always;
 }
 
-/* Full-Screen Date & AGENDAR Section with snap alignment */
-.date-screen-wrapper {
+/* Screen 2: Date, AGENDAR, Forest Parade, Location & VER EN GOOGLE MAPS */
+.screen-2-wrapper {
+  position: relative;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Screen 3: Fullscreen WhatsApp RSVP Section */
+.screen-3-wrapper {
   position: relative;
   width: 100%;
   min-height: 100vh;
