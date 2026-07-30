@@ -197,7 +197,7 @@ function App() {
 
     // 7. Event Details card fade-in animation
     if (detailsCard) {
-      tl.fromTo(detailsCard, 
+      tl.fromTo(detailsCard,
         { opacity: 0, scale: 0.85, y: 30 },
         { opacity: 1, scale: 1, y: 0, ease: "power2.out", duration: 0.3 },
         0
@@ -216,14 +216,15 @@ function App() {
       <div className="hero-header-wrapper">
         <div className="hero-typography-container">
           <h1 className="luca-title">Luca</h1>
-          <p className="subtitle-primer-ano">Te invito a mi primer año</p>
+          <p className="subtitle-primer-ano">Te invito a</p>
+          <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
           <div className="scroll-indicator-hero">Deslizá hacia abajo 👇</div>
         </div>
       </div>
 
       {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
-        
+
         {/* Event Details Section positioned at the top of the mobile screen */}
         <div className="glass-card details-section" ref={detailsCardRef} style={{ width: '90%', maxWidth: '440px', zIndex: 15 }}>
           <h2>Detalles del evento</h2>
