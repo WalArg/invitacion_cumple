@@ -179,20 +179,166 @@ h2 {
   margin-bottom: 14px;
 }
 
-/* Lists and details */
-.details-list {
-  list-style: none;
-  font-size: 0.95rem;
-  text-align: left;
-  margin: 0 auto 16px auto;
-  max-width: 220px;
+/* Floating Event Details Section (No box, matching design sample) */
+.details-section-wrapper {
+  width: 90%;
+  max-width: 420px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #5C3A21;
 }
 
-.details-list li {
-  margin-bottom: 10px;
+.details-month {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  margin-bottom: 4px;
+}
+
+.details-date-grid {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  margin: 4px 0;
+}
+
+.date-side-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.date-side-col .divider-line {
+  width: 100%;
+  height: 1.5px;
+  background-color: #5C3A21;
+  opacity: 0.7;
+}
+
+.date-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+}
+
+.date-center-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 4.2rem;
+  font-weight: 500;
+  line-height: 0.85;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  padding: 0 4px;
+}
+
+.details-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+
+/* AGENDAR and VER EN GOOGLE MAPS Pill Buttons */
+.btn-agendar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F4EBE6;
+  color: #6A3816;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 32px;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(106, 56, 22, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.btn-agendar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(106, 56, 22, 0.25);
+}
+
+.btn-maps {
+  font-size: 1.05rem;
+  padding: 12px 26px;
+  margin-top: 14px;
+}
+
+/* Leaf Divider */
+.leaf-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  gap: 12px;
+  margin: 14px 0 10px 0;
+}
+
+.leaf-divider .line {
+  flex: 1;
+  height: 1.5px;
+  background-color: #5C3A21;
+  opacity: 0.5;
+}
+
+.leaf-icon {
+  font-size: 1.2rem;
+}
+
+/* Location Section */
+.location-pin-icon {
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+.location-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  margin-bottom: 4px;
+}
+
+.location-address {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5C3A21;
+  text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
+  line-height: 1.2;
 }
 
 /* Buttons */

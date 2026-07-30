@@ -223,18 +223,68 @@ function App() {
 
       {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox & Event Details */}
       <div className="bear-pin-section" ref={pinRef}>
+        
+        {/* Floating Event Details Section (No box, matching design sample layout) */}
+        <div className="details-section-wrapper" ref={detailsCardRef}>
+          
+          <div className="details-month">NOVIEMBRE</div>
 
-        {/* Event Details Section positioned at the top of the mobile screen */}
-        <div className="glass-card details-section" ref={detailsCardRef} style={{ width: '90%', maxWidth: '440px', zIndex: 15 }}>
-          <h2>Detalles del evento</h2>
-          <ul className="details-list">
-            <li>📅 <strong>Fecha:</strong> Sábado 15 de Noviembre</li>
-            <li>⏰ <strong>Hora:</strong> 16:00 hs</li>
-            <li>📍 <strong>Lugar:</strong> Salón El Bosque</li>
-          </ul>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-            Ver en Google Maps
+          <div className="details-date-grid">
+            <div className="date-side-col">
+              <div className="divider-line"></div>
+              <span className="date-label">SÁBADO</span>
+              <div className="divider-line"></div>
+            </div>
+
+            <div className="date-center-number">15</div>
+
+            <div className="date-side-col">
+              <div className="divider-line"></div>
+              <span className="date-label">16:00 HRS</span>
+              <div className="divider-line"></div>
+            </div>
+          </div>
+
+          <div className="details-year">2026</div>
+
+          {/* AGENDAR Button (Downloads calendar event) */}
+          <a 
+            href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR" 
+            download="cumple_luca.ics" 
+            className="btn-agendar"
+          >
+            AGENDAR
           </a>
+
+          {/* Leaf Divider */}
+          <div className="leaf-divider">
+            <span className="line"></span>
+            <span className="leaf-icon">🍃</span>
+            <span className="line"></span>
+          </div>
+
+          {/* Location Pin Icon */}
+          <div className="location-pin-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+
+          <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
+          <div className="location-address">AV. VERGARA 5415</div>
+          <div className="location-address">HURLING CLUB</div>
+
+          {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
+          <a 
+            href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn-agendar btn-maps"
+          >
+            VER EN GOOGLE MAPS
+          </a>
+
         </div>
 
         {/* Animated Baby Luca Sprite Container (leading in front) */}
