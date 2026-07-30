@@ -285,11 +285,11 @@ function App() {
         </div>
 
         {/* Location & VER EN GOOGLE MAPS Section (Appears naturally right after the forest parade with 0 animation effects) */}
-        <div className="app-container">
-          <div className="content-overlay" style={{ gap: '20px', padding: '10px 16px 40px 16px' }}>
+        <div className="app-container" style={{ marginTop: '-10px', zIndex: 30 }}>
+          <div className="content-overlay" style={{ gap: '10px', padding: '0px 16px 40px 16px' }}>
 
             <div className="details-section-wrapper">
-              <div className="location-pin-icon">
+              <div className="location-pin-icon" style={{ marginTop: '0px' }}>
                 <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                   <circle cx="12" cy="10" r="3"></circle>
