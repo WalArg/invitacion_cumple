@@ -214,12 +214,10 @@ function App() {
 
       {/* Hero Header Section with luca.png background at the very top */}
       <div className="hero-header-wrapper">
-        <div className="app-container">
-          <div className="glass-card header-section">
-            <h1>¡Luca cumple 1 añito!</h1>
-            <p className="subtitle">Acompáñanos a celebrar en el bosque 🌿</p>
-            <div className="scroll-indicator">Deslizá hacia abajo 👇</div>
-          </div>
+        <div className="hero-typography-container">
+          <h1 className="luca-title">Luca</h1>
+          <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
+          <div className="scroll-indicator-hero">Deslizá hacia abajo 👇</div>
         </div>
       </div>
 
