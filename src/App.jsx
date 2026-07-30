@@ -215,22 +215,24 @@ function App() {
 
         {/* Date & AGENDAR Section */}
         <div className="app-container">
-          <div className="content-overlay" style={{ gap: '15px', padding: '30px 16px 5px 16px' }}>
+          <div className="content-overlay" style={{ gap: '0px', padding: '10px 16px 0px 16px' }}>
             <div className="details-section-wrapper">
-              <div className="details-month">SEPTIEMBRE</div>
+              
+              {/* Date Box (No box, just floating text) */}
+              <div className="details-month" style={{ marginBottom: '-5px' }}>NOVIEMBRE</div>
 
-              <div className="details-date-grid">
+              <div className="details-date-grid" style={{ gap: '10px' }}>
                 <div className="date-side-col">
                   <div className="divider-line"></div>
                   <span className="date-label">SÁBADO</span>
                   <div className="divider-line"></div>
                 </div>
 
-                <div className="date-center-number">19</div>
+                <div className="date-center-number">15</div>
 
                 <div className="date-side-col">
                   <div className="divider-line"></div>
-                  <span className="date-label">15:30 HRS</span>
+                  <span className="date-label">16:00 HRS</span>
                   <div className="divider-line"></div>
                 </div>
               </div>
@@ -285,8 +287,8 @@ function App() {
         </div>
 
         {/* Location & VER EN GOOGLE MAPS Section (Appears naturally right after the forest parade with 0 animation effects) */}
-        <div className="app-container" style={{ marginTop: '-10px', zIndex: 30 }}>
-          <div className="content-overlay" style={{ gap: '10px', padding: '0px 16px 40px 16px' }}>
+        <div className="app-container" style={{ marginTop: '-15px', zIndex: 30 }}>
+          <div className="content-overlay" style={{ gap: '10px', padding: '0px 16px 20px 16px' }}>
 
             <div className="details-section-wrapper">
               <div className="location-pin-icon" style={{ marginTop: '0px' }}>
