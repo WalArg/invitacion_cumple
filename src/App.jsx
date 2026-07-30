@@ -219,25 +219,15 @@ function App() {
             <div className="details-section-wrapper">
               
               {/* Date Box (No box, just floating text) */}
-              <div className="details-month" style={{ marginBottom: '-5px' }}>NOVIEMBRE</div>
-
-              <div className="details-date-grid" style={{ gap: '10px' }}>
-                <div className="date-side-col">
-                  <div className="divider-line"></div>
-                  <span className="date-label">SÁBADO</span>
-                  <div className="divider-line"></div>
+              <div className="details-date-grid">
+                <div className="date-month">NOVIEMBRE</div>
+                <div className="date-row">
+                  <span className="date-day-name">SÁBADO</span>
+                  <span className="date-number">15</span>
                 </div>
-
-                <div className="date-center-number">15</div>
-
-                <div className="date-side-col">
-                  <div className="divider-line"></div>
-                  <span className="date-label">16:00 HRS</span>
-                  <div className="divider-line"></div>
-                </div>
+                <div className="date-time">16:00 HRS</div>
+                <div className="date-year">2026</div>
               </div>
-
-              <div className="details-year">2026</div>
 
               {/* AGENDAR Button (Downloads calendar event) */}
               <a
