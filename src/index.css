@@ -3,14 +3,19 @@
   src: url('/fonts/WonderfulBranding.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: block; /* Hides fallback text until font loads to prevent FOUT flash */
+  font-display: block;
+  /* Hides fallback text until font loads to prevent FOUT flash */
 }
 
 :root {
-  --color-primary: #557153; /* earthy green */
-  --color-secondary: #7D8F69; /* muted green */
-  --color-accent: #A9AF7E; /* warm beige-green */
-  --color-bg: #FAFAFA; /* exact color analyzed from top row pixels of bosque3.png */
+  --color-primary: #557153;
+  /* earthy green */
+  --color-secondary: #7D8F69;
+  /* muted green */
+  --color-accent: #A9AF7E;
+  /* warm beige-green */
+  --color-bg: #FAFAFA;
+  /* exact color analyzed from top row pixels of bosque3.png */
   --color-text: #3E4E36;
   --color-white: #F9F8F3;
   --font-main: 'Outfit', sans-serif;
@@ -22,9 +27,12 @@
   padding: 0;
 }
 
-html, body {
-  overscroll-behavior-y: none; /* Prevents mobile browser rubber-band bounce backwards */
-  scroll-snap-type: y mandatory; /* Enables strict screen-by-screen snapping */
+html,
+body {
+  overscroll-behavior-y: none;
+  /* Prevents mobile browser rubber-band bounce backwards */
+  scroll-snap-type: y mandatory;
+  /* Enables strict screen-by-screen snapping */
   scroll-behavior: smooth;
 }
 
@@ -43,7 +51,8 @@ body {
   min-height: 100vh;
   padding-bottom: 80vh;
   background-color: var(--color-bg);
-  overflow: hidden; /* Clips off-screen translated elements to prevent touch scroll locking */
+  overflow: hidden;
+  /* Clips off-screen translated elements to prevent touch scroll locking */
 }
 
 /* Screen 1: Hero Header Container with luca.png background */
@@ -101,7 +110,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -30px; /* Pulls the text block higher up */
+  margin-top: -30px;
+  /* Pulls the text block higher up */
 }
 
 /* "Luca" - Original Wonderful Branding Calligraphy font */
@@ -110,7 +120,8 @@ body {
   font-size: 5.5rem;
   font-weight: 400;
   color: #3A4D3A;
-  margin: 40px 0 14px 0; /* Added 40px top margin to separate from the subtitle */
+  margin: 80px 0 14px 0;
+  /* Added 40px top margin to separate from the subtitle */
   line-height: 0.9;
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.95);
 }
@@ -146,25 +157,31 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  z-index: 20; /* Ensure Date & AGENDAR stay on top of the pulled-up forest! */
+  z-index: 20;
+  /* Ensure Date & AGENDAR stay on top of the pulled-up forest! */
 }
 
 /* Pinned section for Bear, Rabbit & Animals Parade (Attached right below AGENDAR) */
 .bear-pin-section {
   position: relative;
   width: 100%;
-  height: 30vh; /* Shorter height so it fits perfectly on screen along with Date and Location */
-  margin-top: 25px; /* Adds a bit of breathing room between the AGENDAR button and the forest */
+  height: 30vh;
+  /* Shorter height so it fits perfectly on screen along with Date and Location */
+  margin-top: 25px;
+  /* Adds a bit of breathing room between the AGENDAR button and the forest */
   background-image: url('/bosque3.png');
-  background-size: cover; /* Zoom in slightly to fill container entirely, eliminating any white edges */
-  background-position: center bottom; /* Anchors the green grass to the bottom */
+  background-size: cover;
+  /* Zoom in slightly to fill container entirely, eliminating any white edges */
+  background-position: center bottom;
+  /* Anchors the green grass to the bottom */
   background-repeat: no-repeat;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden; /* Clips animals as soon as they exit the section boundary */
+  overflow: hidden;
+  /* Clips animals as soon as they exit the section boundary */
 }
 
 /* Content overlay */
@@ -309,7 +326,8 @@ h2 {
   box-shadow: 0 6px 20px rgba(106, 56, 22, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.2s, box-shadow 0.2s;
-  margin: 10px 0 0 0; /* No bottom margin to avoid white space gap! */
+  margin: 10px 0 0 0;
+  /* No bottom margin to avoid white space gap! */
   cursor: pointer;
 }
 
@@ -422,9 +440,22 @@ h2 {
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-8px); }
-  60% { transform: translateY(-4px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-8px);
+  }
+
+  60% {
+    transform: translateY(-4px);
+  }
 }
 
 /* Baby Sprite Container (leading the parade) */
@@ -434,7 +465,8 @@ h2 {
   left: -10px;
   width: 65px;
   height: 130px;
-  z-index: 22; /* Rendered in front of bear (z-index 20) and rabbit (z-index 18) */
+  z-index: 22;
+  /* Rendered in front of bear (z-index 20) and rabbit (z-index 18) */
   pointer-events: none;
 }
 
@@ -451,7 +483,8 @@ h2 {
 .bear-container {
   position: absolute;
   bottom: 5%;
-  left: -210px; /* Equalized 60px gap behind Baby */
+  left: -210px;
+  /* Equalized 60px gap behind Baby */
   width: 140px;
   height: 280px;
   z-index: 20;
@@ -471,7 +504,8 @@ h2 {
 .rabbit-container {
   position: absolute;
   bottom: 5%;
-  left: -325px; /* Equalized 60px gap behind Bear */
+  left: -325px;
+  /* Equalized 60px gap behind Bear */
   width: 55px;
   height: 95px;
   z-index: 18;
@@ -491,7 +525,8 @@ h2 {
 .bambi-container {
   position: absolute;
   bottom: 5%;
-  left: -525px; /* Equalized 60px gap behind Rabbit */
+  left: -525px;
+  /* Equalized 60px gap behind Rabbit */
   width: 140px;
   height: 210px;
   z-index: 16;
@@ -511,7 +546,8 @@ h2 {
 .hedgehog-container {
   position: absolute;
   bottom: 5%;
-  left: -635px; /* Equalized 60px gap behind Bambi */
+  left: -635px;
+  /* Equalized 60px gap behind Bambi */
   width: 50px;
   height: 82px;
   z-index: 15;
@@ -531,7 +567,8 @@ h2 {
 .fox-container {
   position: absolute;
   bottom: 5%;
-  left: -808px; /* Equalized 60px gap behind Hedgehog */
+  left: -808px;
+  /* Equalized 60px gap behind Hedgehog */
   width: 113px;
   height: 135px;
   z-index: 14;
