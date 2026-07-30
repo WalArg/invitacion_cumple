@@ -226,11 +226,11 @@ function App() {
               <div className="details-date-grid" style={{ gap: '10px' }}>
                 <div className="date-side-col">
                   <div className="divider-line"></div>
-                  <span className="date-label">SÁBADO</span>
+                  <span className="date-label">DOMINGO</span>
                   <div className="divider-line"></div>
                 </div>
 
-                <div className="date-center-number">19</div>
+                <div className="date-center-number">20</div>
 
                 <div className="date-side-col">
                   <div className="divider-line"></div>
@@ -243,7 +243,7 @@ function App() {
 
               {/* AGENDAR Button (Downloads calendar event) */}
               <a
-                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20260919T183000Z%0ADTEND:20260919T223000Z%0AEND:VEVENT%0AEND:VCALENDAR"
+                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20260920T183000Z%0ADTEND:20260920T223000Z%0AEND:VEVENT%0AEND:VCALENDAR"
                 download="cumple_luca.ics"
                 className="btn-agendar"
               >
