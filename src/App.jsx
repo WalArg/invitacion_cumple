@@ -41,7 +41,7 @@ function App() {
 
     if (!bear || !container || !pinSection) return;
 
-    // Single Master Timeline for the Pinned Section
+    // Single Master Timeline for the Pinned Section (Fast, responsive pin duration for mobile)
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: pinSection,
@@ -212,19 +212,14 @@ function App() {
   return (
     <div className="main-wrapper" ref={containerRef}>
 
-      <div className="app-container">
-        <div className="content-overlay">
-
-          {/* Header Section */}
+      {/* Hero Header Section with luca.png background at the very top */}
+      <div className="hero-header-wrapper">
+        <div className="app-container">
           <div className="glass-card header-section">
             <h1>¡Luca cumple 1 añito!</h1>
             <p className="subtitle">Acompáñanos a celebrar en el bosque 🌿</p>
             <div className="scroll-indicator">Deslizá hacia abajo 👇</div>
           </div>
-
-          {/* Spacer before bear pin */}
-          <div style={{ height: '15vh' }}></div>
-
         </div>
       </div>
 
