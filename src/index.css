@@ -157,23 +157,18 @@ body {
 .bear-pin-section {
   position: relative;
   width: 100%;
-  height: 30vh;
-  /* Shorter height so it fits perfectly on screen along with Date and Location */
-  margin-top: 25px;
-  /* Adds a bit of breathing room between the AGENDAR button and the forest */
+  height: 45vh; /* Aumentamos la altura para que entre toda la copa de los árboles */
+  margin-top: 25px; /* Adds a bit of breathing room between the AGENDAR button and the forest */
   background-image: url('/bosque3.png');
-  background-size: 100% auto;
-  /* Show full width without zooming/cropping the sides */
-  background-position: center bottom;
-  /* Anchors the green grass to the bottom */
+  background-size: contain; /* Garantiza que la imagen no se recorte ni arriba ni a los costados */
+  background-position: center bottom; /* Anchors the green grass to the bottom */
   background-repeat: no-repeat;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow: hidden;
-  /* Clips animals as soon as they exit the section boundary */
+  overflow: hidden; /* Clips animals as soon as they exit the section boundary */
 }
 
 /* Content overlay */
