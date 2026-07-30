@@ -31,8 +31,6 @@ html,
 body {
   overscroll-behavior-y: none;
   /* Prevents mobile browser rubber-band bounce backwards */
-  scroll-snap-type: y mandatory;
-  /* Enables strict screen-by-screen snapping */
   scroll-behavior: smooth;
 }
 
@@ -70,8 +68,6 @@ body {
   align-items: center;
   padding: 40px 16px;
   box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Screen 2: Date, AGENDAR, Forest Parade, Location & VER EN GOOGLE MAPS */
@@ -82,8 +78,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Screen 3: Fullscreen WhatsApp RSVP Section */
@@ -97,8 +91,6 @@ body {
   align-items: center;
   padding: 40px 16px;
   box-sizing: border-box;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 /* Floating Hero Typography (No box) */
