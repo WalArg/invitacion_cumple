@@ -208,7 +208,7 @@ function App() {
         <div className="hero-typography-container">
           <p className="subtitle-primer-ano">Te invito a</p>
           <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
-          <h1 className="luca-title">LUCA</h1>
+          <h1 className="luca-title">Luca</h1>
         </div>
       </div>
 
