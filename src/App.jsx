@@ -219,19 +219,29 @@ function App() {
             <div className="details-section-wrapper">
               
               {/* Date Box (No box, just floating text) */}
-              <div className="details-date-grid">
-                <div className="date-month">NOVIEMBRE</div>
-                <div className="date-row">
-                  <span className="date-day-name">SÁBADO</span>
-                  <span className="date-number">15</span>
+              <div className="details-month" style={{ marginBottom: '-5px' }}>SEPTIEMBRE</div>
+
+              <div className="details-date-grid" style={{ gap: '10px' }}>
+                <div className="date-side-col">
+                  <div className="divider-line"></div>
+                  <span className="date-label">SÁBADO</span>
+                  <div className="divider-line"></div>
                 </div>
-                <div className="date-time">16:00 HRS</div>
-                <div className="date-year">2026</div>
+
+                <div className="date-center-number">19</div>
+
+                <div className="date-side-col">
+                  <div className="divider-line"></div>
+                  <span className="date-label">15:30 HRS</span>
+                  <div className="divider-line"></div>
+                </div>
               </div>
+
+              <div className="details-year">2026</div>
 
               {/* AGENDAR Button (Downloads calendar event) */}
               <a
-                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR"
+                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20260919T183000Z%0ADTEND:20260919T223000Z%0AEND:VEVENT%0AEND:VCALENDAR"
                 download="cumple_luca.ics"
                 className="btn-agendar"
               >
