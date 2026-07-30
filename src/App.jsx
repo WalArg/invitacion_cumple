@@ -20,7 +20,6 @@ function App() {
   const foxSpriteRef = useRef(null);
   const containerRef = useRef(null);
   const pinRef = useRef(null);
-  const detailsCardRef = useRef(null);
 
   useEffect(() => {
     const baby = babyRef.current;
@@ -37,7 +36,6 @@ function App() {
     const foxSprite = foxSpriteRef.current;
     const container = containerRef.current;
     const pinSection = pinRef.current;
-    const detailsCard = detailsCardRef.current;
 
     if (!bear || !container || !pinSection) return;
 
@@ -195,15 +193,6 @@ function App() {
       }, 0);
     }
 
-    // 7. Event Details card fade-in animation
-    if (detailsCard) {
-      tl.fromTo(detailsCard,
-        { opacity: 0, scale: 0.85, y: 30 },
-        { opacity: 1, scale: 1, y: 0, ease: "power2.out", duration: 0.3 },
-        0
-      );
-    }
-
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
@@ -221,65 +210,45 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox & Event Details */}
+      {/* Date & AGENDAR Section */}
+      <div className="app-container">
+        <div className="content-overlay" style={{ gap: '20px', padding: '35px 16px 20px 16px' }}>
+          <div className="details-section-wrapper">
+            <div className="details-month">NOVIEMBRE</div>
+
+            <div className="details-date-grid">
+              <div className="date-side-col">
+                <div className="divider-line"></div>
+                <span className="date-label">SÁBADO</span>
+                <div className="divider-line"></div>
+              </div>
+
+              <div className="date-center-number">15</div>
+
+              <div className="date-side-col">
+                <div className="divider-line"></div>
+                <span className="date-label">16:00 HRS</span>
+                <div className="divider-line"></div>
+              </div>
+            </div>
+
+            <div className="details-year">2026</div>
+
+            {/* AGENDAR Button (Downloads calendar event) */}
+            <a 
+              href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR" 
+              download="cumple_luca.ics" 
+              className="btn-agendar"
+            >
+              AGENDAR
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
       <div className="bear-pin-section" ref={pinRef}>
         
-        {/* Floating Event Details Section (No box, matching design sample layout) */}
-        <div className="details-section-wrapper" ref={detailsCardRef}>
-          
-          <div className="details-month">NOVIEMBRE</div>
-
-          <div className="details-date-grid">
-            <div className="date-side-col">
-              <div className="divider-line"></div>
-              <span className="date-label">SÁBADO</span>
-              <div className="divider-line"></div>
-            </div>
-
-            <div className="date-center-number">15</div>
-
-            <div className="date-side-col">
-              <div className="divider-line"></div>
-              <span className="date-label">16:00 HRS</span>
-              <div className="divider-line"></div>
-            </div>
-          </div>
-
-          <div className="details-year">2026</div>
-
-          {/* AGENDAR Button (Downloads calendar event) */}
-          <a 
-            href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20261115T190000Z%0ADTEND:20261115T230000Z%0AEND:VEVENT%0AEND:VCALENDAR" 
-            download="cumple_luca.ics" 
-            className="btn-agendar"
-          >
-            AGENDAR
-          </a>
-
-          {/* Location Pin Icon */}
-          <div className="location-pin-icon">
-            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-          </div>
-
-          <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
-          <div className="location-address">AV. VERGARA 5415</div>
-          <div className="location-address">HURLING CLUB</div>
-
-          {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
-          <a 
-            href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-agendar btn-maps"
-          >
-            VER EN GOOGLE MAPS
-          </a>
-
-        </div>
-
         {/* Animated Baby Luca Sprite Container (leading in front) */}
         <div className="baby-container" ref={babyRef}>
           <div className="baby-sprite" ref={babySpriteRef}></div>
@@ -312,11 +281,36 @@ function App() {
 
       </div>
 
+      {/* Location & VER EN GOOGLE MAPS Section + RSVP */}
       <div className="app-container">
-        <div className="content-overlay">
+        <div className="content-overlay" style={{ gap: '30px', padding: '25px 16px' }}>
 
-          {/* Spacer after bear pin */}
-          <div style={{ height: '5vh' }}></div>
+          {/* Location Pin Icon & Details */}
+          <div className="details-section-wrapper">
+            <div className="location-pin-icon">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+
+            <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
+            <div className="location-address">AV. VERGARA 5415</div>
+            <div className="location-address">HURLING CLUB</div>
+
+            {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Av.+Vergara+5415,+Hurling+Club" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-agendar btn-maps"
+            >
+              VER EN GOOGLE MAPS
+            </a>
+          </div>
+
+          {/* Spacer before RSVP */}
+          <div style={{ height: '2vh' }}></div>
 
           {/* RSVP Section */}
           <div className="glass-card rsvp-section">
@@ -330,7 +324,7 @@ function App() {
             </a>
           </div>
 
-          {/* Extra scroll space */}
+          {/* Ample bottom headroom */}
           <div style={{ height: '40vh' }}></div>
 
         </div>
