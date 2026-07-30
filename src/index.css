@@ -84,29 +84,27 @@ body {
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.95);
 }
 
-/* "MI PRIMER AÑO" - Slanted, tracked caps font (Pluma style) */
+/* "Te invito a mi primer año" - Elegant Cormorant Garamond font */
 .subtitle-primer-ano {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.15rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 5px;
-  color: #4A5D4A;
-  margin-top: 10px;
-  margin-bottom: 26px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #3A4D3A;
+  margin-top: 6px;
+  margin-bottom: 24px;
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
 }
 
-/* "DESLIZÁ HACIA ABAJO 👇" - Slanted, tracked caps font matching Pluma style */
+/* "Deslizá hacia abajo 👇" - Elegant Cormorant Garamond font */
 .scroll-indicator-hero {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 3px;
-  color: #557153;
-  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #4A5D4A;
   animation: bounce 2s infinite;
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
 }

@@ -216,7 +216,7 @@ function App() {
       <div className="hero-header-wrapper">
         <div className="hero-typography-container">
           <h1 className="luca-title">Luca</h1>
-          <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
+          <p className="subtitle-primer-ano">Te invito a mi primer año</p>
           <div className="scroll-indicator-hero">Deslizá hacia abajo 👇</div>
         </div>
       </div>
