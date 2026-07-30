@@ -142,7 +142,7 @@ body {
   width: 100%;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 20; /* Ensure Date & AGENDAR stay on top of the pulled-up forest! */
 }
 
 /* Pinned section for Bear, Rabbit & Animals Parade (Attached right below AGENDAR) */
@@ -150,7 +150,7 @@ body {
   position: relative;
   width: 100%;
   height: 75vh;
-  margin-top: -45px; /* Pulls forest up so it touches AGENDAR button with 0 white gap */
+  margin-top: -90px; /* Pulls forest way up behind AGENDAR to completely eliminate white space */
   background-image: url('/bosque3.png');
   background-size: 100% auto; /* 100% screen width, natural un-zoomed height */
   background-position: center 85%; /* Displays green forest clearing right at the top */
@@ -305,7 +305,7 @@ h2 {
   box-shadow: 0 6px 20px rgba(106, 56, 22, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.8);
   transition: transform 0.2s, box-shadow 0.2s;
-  margin: 10px 0;
+  margin: 10px 0 0 0; /* No bottom margin to avoid white space gap! */
   cursor: pointer;
 }
 
