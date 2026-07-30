@@ -20,6 +20,7 @@ function App() {
   const foxSpriteRef = useRef(null);
   const containerRef = useRef(null);
   const pinRef = useRef(null);
+  const screen2Ref = useRef(null);
 
   useEffect(() => {
     const baby = babyRef.current;
@@ -36,13 +37,14 @@ function App() {
     const foxSprite = foxSpriteRef.current;
     const container = containerRef.current;
     const pinSection = pinRef.current;
+    const screen2 = screen2Ref.current;
 
-    if (!bear || !container || !pinSection) return;
+    if (!bear || !container || !pinSection || !screen2) return;
 
     // Single Master Timeline for the Pinned Section (Parade of 6 animals)
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: pinSection,
+        trigger: screen2, /* Pin the entire screen 2 so Date and Location stay visible */
         start: "top top",
         end: "+=900",
         pin: true,
@@ -204,14 +206,14 @@ function App() {
       {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">
         <div className="hero-typography-container">
-          <h1 className="luca-title">Luca</h1>
           <p className="subtitle-primer-ano">Te invito a</p>
           <p className="subtitle-primer-ano">MI PRIMER AÑO</p>
+          <h1 className="luca-title">LUCA</h1>
         </div>
       </div>
 
       {/* Screen 2: Date, AGENDAR, Forest Parade, Location & VER EN GOOGLE MAPS */}
-      <div className="screen-2-wrapper">
+      <div className="screen-2-wrapper" ref={screen2Ref}>
 
         {/* Date & AGENDAR Section */}
         <div className="app-container">
