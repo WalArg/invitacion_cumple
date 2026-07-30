@@ -51,7 +51,7 @@ body {
   min-height: 100vh;
   background-image: url('/luca.png');
   background-size: cover;
-  background-position: center 45%; /* Natural full-cover positioning */
+  background-position: center 65%; /* Moves photo down so Luca's head sits lower in the viewport */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
