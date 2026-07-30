@@ -150,7 +150,7 @@ body {
   position: relative;
   width: 100%;
   height: 30vh; /* Shorter height so it fits perfectly on screen along with Date and Location */
-  margin-top: 5px; /* Sits exactly below AGENDAR */
+  margin-top: 25px; /* Adds a bit of breathing room between the AGENDAR button and the forest */
   background-image: url('/bosque3.png');
   background-size: cover; /* Zoom in slightly to fill container entirely, eliminating any white edges */
   background-position: center bottom; /* Anchors the green grass to the bottom */
