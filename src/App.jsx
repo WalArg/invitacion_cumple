@@ -200,6 +200,30 @@ function App() {
     };
   }, []);
 
+  const handleDownloadCalendar = (e) => {
+    e.preventDefault();
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Cumple de Luca 1 añito 🎂
+DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!
+LOCATION:Av. Vergara 5415, Hurling Club
+DTSTART:20260920T183000Z
+DTEND:20260920T223000Z
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'cumple_luca.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="main-wrapper" ref={containerRef}>
 
@@ -242,13 +266,12 @@ function App() {
               <div className="details-year">2026</div>
 
               {/* AGENDAR Button (Downloads calendar event) */}
-              <a
-                href="data:text/calendar;charset=utf8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Cumple de Luca 1 añito 🎂%0ADESCRIPTION:¡Te esperamos para festejar el primer año de Luca!%0ALOCATION:Av. Vergara 5415, Hurling Club%0ADTSTART:20260920T183000Z%0ADTEND:20260920T223000Z%0AEND:VEVENT%0AEND:VCALENDAR"
-                download="cumple_luca.ics"
+              <button
+                onClick={handleDownloadCalendar}
                 className="btn-agendar"
               >
                 AGENDAR
-              </a>
+              </button>
             </div>
           </div>
         </div>
