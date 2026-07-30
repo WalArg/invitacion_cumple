@@ -201,7 +201,7 @@ function App() {
   return (
     <div className="main-wrapper" ref={containerRef}>
 
-      {/* Hero Header Section with luca.png background at the very top */}
+      {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">
         <div className="hero-typography-container">
           <h1 className="luca-title">Luca</h1>
@@ -210,9 +210,9 @@ function App() {
         </div>
       </div>
 
-      {/* Date & AGENDAR Section */}
-      <div className="app-container">
-        <div className="content-overlay" style={{ gap: '20px', padding: '35px 16px 20px 16px' }}>
+      {/* Screen 2: Full-screen Date & AGENDAR Section with snap transition */}
+      <div className="date-screen-wrapper">
+        <div className="app-container">
           <div className="details-section-wrapper">
             <div className="details-month">NOVIEMBRE</div>
 
@@ -246,7 +246,7 @@ function App() {
         </div>
       </div>
 
-      {/* Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
+      {/* Screen 3: Pinned Section for Baby, Bear, Rabbit, Bambi, Hedgehog, Fox Parade */}
       <div className="bear-pin-section" ref={pinRef}>
         
         {/* Animated Baby Luca Sprite Container (leading in front) */}
@@ -281,7 +281,7 @@ function App() {
 
       </div>
 
-      {/* Location & VER EN GOOGLE MAPS Section + RSVP */}
+      {/* Screen 4: Location, VER EN GOOGLE MAPS & RSVP Section */}
       <div className="app-container">
         <div className="content-overlay" style={{ gap: '30px', padding: '25px 16px' }}>
 
