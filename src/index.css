@@ -49,15 +49,16 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  background-color: #47704c; /* Seamlessly matches green top of luca.png */
   background-image: url('/luca.png');
   background-size: cover;
-  background-position: center 80%; /* Moves photo down so Luca's face is lower on screen */
+  background-position: center 280px; /* Positions Luca's face in the lower portion of the screen */
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 16px;
+  padding: 30px 16px;
   box-sizing: border-box;
 }
 
@@ -70,31 +71,31 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 /* "Luca" - Original Wonderful Branding Calligraphy font */
 .luca-title {
   font-family: 'WonderfulBranding', cursive;
-  font-size: 5.5rem;
+  font-size: 5.8rem;
   font-weight: 400;
-  color: #3A4D3A;
+  color: #FFFFFF;
   margin: 0;
   line-height: 0.9;
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.95);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.35), 0 0 25px rgba(255, 255, 255, 0.2);
 }
 
 /* "Te invito a mi primer año" - Elegant Cormorant Garamond font */
 .subtitle-primer-ano {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 1px;
-  color: #3A4D3A;
+  letter-spacing: 1.5px;
+  color: #F9F8F3;
   margin-top: 6px;
-  margin-bottom: 24px;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* "Deslizá hacia abajo 👇" - Elegant Cormorant Garamond font */
@@ -104,9 +105,9 @@ body {
   font-weight: 600;
   font-style: italic;
   letter-spacing: 1px;
-  color: #4A5D4A;
+  color: #E2E8DD;
   animation: bounce 2s infinite;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 /* Mobile-first container */
