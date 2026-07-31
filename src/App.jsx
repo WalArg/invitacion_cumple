@@ -45,7 +45,7 @@ function App() {
           await audioRef.current.play();
         } catch (err) {
           console.log("Autoplay bloqueado por navegador, esperando interacción");
-          setIsPlaying(false);
+          // Mantenemos isPlaying en true para que el ícono sea el de sonido activado
         }
       }
     };
