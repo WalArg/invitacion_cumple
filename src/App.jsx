@@ -345,6 +345,7 @@ END:VCALENDAR`;
 
               <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
               <div className="location-address">PASO MORALES 620</div>
+              <div className="location-address">HURLING CLUB</div>
 
               {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
               <a
@@ -376,8 +377,7 @@ END:VCALENDAR`;
               </svg>
             </div>
             <div className="location-title">CÓDIGO DE VESTIMENTA</div>
-            <div className="location-address" style={{ textTransform: 'none' }}>Cómo te sientas cómodo/a</div>
-            <div className="location-address" style={{ textTransform: 'none' }}>y recordá traer tu equipo de mate.</div>
+            <div className="location-address" style={{ textTransform: 'none' }}>Comodidad. Y si sos matero/a, ¡trae tu equipo de mate!</div>
           </div>
 
           <LeafSeparator />
@@ -391,7 +391,7 @@ END:VCALENDAR`;
               </svg>
             </div>
             <div className="location-title">CONFIRMAR ASISTENCIA</div>
-            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Tu presencia es muy importante para nosotros.</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Nos haría muy felices que nos acompañes en este día tan especial.</div>
             <a href="https://forms.gle/7HedJ1VvKDJSKKR1A" target="_blank" rel="noopener noreferrer" className="btn-agendar">
               CONFIRMAR
             </a>
@@ -408,7 +408,7 @@ END:VCALENDAR`;
               </svg>
             </div>
             <div className="location-title">COMPARTIR FOTOS</div>
-            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Compartí las fotos y/o videos de este día especial.</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Ayudanos a guardar los mejores recuerdos de este día ❤️</div>
             <a href="https://photos.app.goo.gl/C5Hzt9sT8H8c79M59" target="_blank" rel="noopener noreferrer" className="btn-agendar">
               SUBIR FOTOS
             </a>
