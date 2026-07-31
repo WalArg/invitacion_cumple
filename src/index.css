@@ -127,13 +127,13 @@ body {
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.95);
   
   /* Animación tipo firma escribiéndose */
-  clip-path: polygon(0 -20%, 0 120%, 0 120%, 0 -20%);
+  clip-path: polygon(-20% -20%, -20% 120%, -20% 120%, -20% -20%);
   animation: writeSignature 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   animation-delay: 1.2s;
 }
 
 @keyframes writeSignature {
-  to { clip-path: polygon(0 -20%, 0 120%, 120% 120%, 120% -20%); }
+  to { clip-path: polygon(-20% -20%, -20% 120%, 120% 120%, 120% -20%); }
 }
 
 /* "Te invito a" & "MI PRIMER AÑO" - Harmonious Cormorant Garamond subtitle spacing */
