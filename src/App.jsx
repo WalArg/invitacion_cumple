@@ -455,7 +455,7 @@ function App() {
 
       {/* Final Family Photo (Full width, attached to bottom) */}
       <img 
-        src="/anto_luca_wal.png" 
+        src="/anto_luca_wal.webp" 
         alt="Anto, Luca y Wal" 
         style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} 
       />
