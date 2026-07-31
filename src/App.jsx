@@ -479,7 +479,7 @@ function App() {
               </svg>
             </div>
             <div className="location-title">CÓDIGO DE VESTIMENTA</div>
-            <div className="location-address" style={{ textTransform: 'none' }}>Comodidad. Y si sos matero/a, ¡trae tu equipo de mate!</div>
+            <div className="location-address" style={{ textTransform: 'none' }}>Cómodo. Y si sos matero/a, ¡trae tu equipo de mate!</div>
           </div>
 
           <LeafSeparator />
