@@ -348,18 +348,26 @@ END:VCALENDAR`;
           
           {/* Código de vestimenta */}
           <div className="final-section">
-            <div className="title-pill">CÓDIGO DE VESTIMENTA</div>
-            <p className="final-text">
-              Cómo te sientas cómodo/a<br/>y recordá traer tu equipo<br/>de mate.
-            </p>
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20.38 3.46L16 2a8.59 8.59 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
+              </svg>
+            </div>
+            <div className="location-title">CÓDIGO DE VESTIMENTA</div>
+            <div className="location-address" style={{ textTransform: 'none' }}>Cómo te sientas cómodo/a</div>
+            <div className="location-address" style={{ textTransform: 'none' }}>y recordá traer tu equipo de mate.</div>
           </div>
 
           {/* Confirmar Asistencia */}
           <div className="final-section">
-            <div className="title-pill">CONFIRMAR ASISTENCIA</div>
-            <p className="final-text" style={{ marginBottom: '15px' }}>
-              Tu presencia es muy<br/>importante para nosotros.
-            </p>
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div className="location-title">CONFIRMAR ASISTENCIA</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Tu presencia es muy importante para nosotros.</div>
             <a href="https://forms.gle/7HedJ1VvKDJSKKR1A" target="_blank" rel="noopener noreferrer" className="btn-agendar">
               CONFIRMAR
             </a>
@@ -367,20 +375,22 @@ END:VCALENDAR`;
 
           {/* Compartir fotos */}
           <div className="final-section">
-            <p className="final-text" style={{ marginBottom: '15px' }}>
-              Compartí las fotos y/o<br/>videos de este día especial.
-            </p>
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+            <div className="location-title">COMPARTIR FOTOS</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Compartí las fotos y/o videos de este día especial.</div>
             <a href="https://photos.app.goo.gl/C5Hzt9sT8H8c79M59" target="_blank" rel="noopener noreferrer" className="btn-agendar">
               SUBIR FOTOS
             </a>
           </div>
 
-          <div className="final-greeting">
+          <div className="final-greeting" style={{ marginBottom: '40px' }}>
             Te esperamos!
           </div>
-
-          {/* Ample bottom headroom */}
-          <div style={{ height: '30vh' }}></div>
 
         </div>
       </div>
