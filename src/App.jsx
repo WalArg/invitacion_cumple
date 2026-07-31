@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
@@ -19,6 +19,9 @@ const LeafSeparator = () => (
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const audioRef = useRef(null);
+  
   const babyRef = useRef(null);
   const babySpriteRef = useRef(null);
   const bearRef = useRef(null);
@@ -34,6 +37,51 @@ function App() {
   const containerRef = useRef(null);
   const pinRef = useRef(null);
   const screen2Ref = useRef(null);
+
+  useEffect(() => {
+    const playAudio = async () => {
+      if (audioRef.current && isPlaying) {
+        try {
+          await audioRef.current.play();
+        } catch (err) {
+          console.log("Autoplay bloqueado por navegador, esperando interacción");
+          setIsPlaying(false);
+        }
+      }
+    };
+    
+    playAudio();
+
+    const handleInteraction = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
+      }
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
+    };
+
+    document.addEventListener('click', handleInteraction);
+    document.addEventListener('touchstart', handleInteraction);
+    document.addEventListener('scroll', handleInteraction);
+
+    return () => {
+      document.removeEventListener('click', handleInteraction);
+      document.removeEventListener('touchstart', handleInteraction);
+      document.removeEventListener('scroll', handleInteraction);
+    };
+  }, []);
+
+  const toggleAudio = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   useEffect(() => {
     const baby = babyRef.current;
@@ -276,6 +324,30 @@ function App() {
 
   return (
     <div className="main-wrapper" ref={containerRef}>
+      
+      {/* Audio Element */}
+      <audio ref={audioRef} src="/musica.mp3" loop preload="auto" />
+      
+      {/* Floating Audio Button */}
+      <button 
+        className="floating-audio-btn" 
+        onClick={toggleAudio}
+        aria-label="Toggle Music"
+      >
+        {isPlaying ? (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        ) : (
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        )}
+      </button>
 
       {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">
