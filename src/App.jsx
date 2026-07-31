@@ -54,14 +54,21 @@ function App() {
 
     if (!bear || !container || !pinSection || !screen2) return;
 
-    // Single Master Timeline for the Pinned Section (Parade of 6 animals)
+    // Pin screen 2 but release it BEFORE the animation fully finishes
+    ScrollTrigger.create({
+      trigger: screen2,
+      start: "top top",
+      end: "+=1500", // Unpins when the fox is roughly in the middle of the screen
+      pin: true,
+      anticipatePin: 1,
+    });
+
+    // Single Master Timeline for the Parade (scrubs all the way to 1800px)
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: screen2, /* Pin the entire screen 2 so Date and Location stay visible */
+        trigger: screen2,
         start: "top top",
-        end: "+=1800", /* Increased from 900 to 1800 to make the animation take more scrolling, thus appearing slower */
-        pin: true,
-        anticipatePin: 1,
+        end: "+=1800", // Continues animating while the page scrolls up
         scrub: 1,
       }
     });
