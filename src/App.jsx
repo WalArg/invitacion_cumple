@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isOpened, setIsOpened] = useState(false);
   const audioRef = useRef(null);
   
   const babyRef = useRef(null);
@@ -41,38 +42,19 @@ function App() {
   const finalGreetingRef = useRef(null);
 
   useEffect(() => {
-    const playAudio = async () => {
-      if (audioRef.current && isPlaying) {
-        try {
-          await audioRef.current.play();
-        } catch (err) {
-          console.log("Autoplay bloqueado por navegador, esperando interacción");
-          // Mantenemos isPlaying en true para que el ícono sea el de sonido activado
-        }
-      }
-    };
-    
-    playAudio();
-
-    const handleInteraction = () => {
-      if (audioRef.current && audioRef.current.paused) {
-        audioRef.current.play().then(() => setIsPlaying(true)).catch(() => {});
-      }
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
-    };
-
-    document.addEventListener('click', handleInteraction);
-    document.addEventListener('touchstart', handleInteraction);
-    document.addEventListener('scroll', handleInteraction);
-
-    return () => {
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
-    };
+    // Ya no intentamos reproducir el audio inmediatamente al cargar,
+    // esperamos a que el usuario toque 'Abrir Invitación'.
   }, []);
+
+  const handleOpenInvitation = () => {
+    setIsOpened(true);
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {
+        console.log("Error al reproducir audio");
+      });
+      setIsPlaying(true);
+    }
+  };
 
   const toggleAudio = () => {
     if (audioRef.current) {
@@ -364,10 +346,21 @@ function App() {
   };
 
   return (
-    <div className="main-wrapper" ref={containerRef}>
-      
-      {/* Audio Element */}
-      <audio ref={audioRef} src="/musica.mp3" loop autoPlay preload="auto" />
+    <>
+      {/* Pantalla de bienvenida / Sobre */}
+      <div className={`welcome-overlay ${isOpened ? 'opened' : ''}`}>
+        <div className="welcome-content">
+          <h2>¡Estás invitado!</h2>
+          <button className="open-btn" onClick={handleOpenInvitation}>
+            Abrir Invitación
+          </button>
+        </div>
+      </div>
+
+      <div className="main-wrapper" ref={containerRef}>
+        
+        {/* Audio Element */}
+        <audio ref={audioRef} src="/musica.mp3" loop preload="auto" />
       
       {/* Floating Audio Button */}
       <button 
@@ -574,6 +567,7 @@ function App() {
       />
 
     </div>
+    </>
   );
 }
 
