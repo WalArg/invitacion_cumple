@@ -16,6 +16,8 @@ const LeafSeparator = () => (
   </div>
 );
 
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
   const babyRef = useRef(null);
   const babySpriteRef = useRef(null);
