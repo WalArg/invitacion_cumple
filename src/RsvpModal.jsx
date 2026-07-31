@@ -12,16 +12,42 @@ const RsvpModal = ({ isOpen, onClose }) => {
     restricciones: ''
   });
 
+  const [isChecking, setIsChecking] = useState(false);
+
   if (!isOpen) return null;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleNext = () => {
+  const checkDuplicate = async (nombre) => {
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwrDM5qec2lJQeF1pxa1uw_lSgANB-D3RymeY1bvGcuzrIEGclIe3dVVRvWRzxtqK4G/exec');
+      const text = await response.text();
+      const names = JSON.parse(text);
+      const nameLower = nombre.trim().toLowerCase();
+      
+      const isDuplicate = names.some(n => n && n.trim().toLowerCase() === nameLower);
+      return isDuplicate;
+    } catch (error) {
+      console.error('Error al validar duplicado:', error);
+      return false; // Permitir continuar en caso de falla de red temporal
+    }
+  };
+
+  const handleNext = async () => {
     if (step === 1) {
       if (!formData.nombre || !formData.asistencia) {
         alert("Por favor, ingresá tu nombre y confirmá tu asistencia.");
+        return;
+      }
+      
+      setIsChecking(true);
+      const isDuplicate = await checkDuplicate(formData.nombre);
+      setIsChecking(false);
+
+      if (isDuplicate) {
+        alert("¡Ya estás registrado en la lista de invitados!");
         return;
       }
       
@@ -114,7 +140,9 @@ const RsvpModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            <button className="rsvp-next-btn" onClick={handleNext}>Siguiente</button>
+            <button className="rsvp-next-btn" onClick={handleNext} disabled={isChecking}>
+              {isChecking ? 'Verificando...' : 'Siguiente'}
+            </button>
           </div>
         )}
 
