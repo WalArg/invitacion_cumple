@@ -635,3 +635,180 @@ h2 {
 .floating-audio-btn:active {
   transform: scale(0.95);
 }
+
+/* --- RSVP Modal Styles --- */
+.rsvp-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(62, 78, 54, 0.95); /* Color de texto como fondo semitransparente */
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.rsvp-modal-content {
+  background-color: var(--color-bg);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  padding: 35px 25px 25px 25px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.rsvp-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+}
+
+.rsvp-step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rsvp-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.rsvp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rsvp-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.rsvp-hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 0;
+}
+
+.rsvp-field input[type="text"],
+.rsvp-field textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-text);
+  box-sizing: border-box;
+}
+
+.rsvp-field input:focus,
+.rsvp-field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.rsvp-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rsvp-radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+
+.rsvp-radio input[type="radio"] {
+  accent-color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.rsvp-radio.selected {
+  border-color: var(--color-primary);
+  background-color: rgba(85, 113, 83, 0.05);
+}
+
+.rsvp-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.rsvp-next-btn,
+.rsvp-submit-btn {
+  flex: 2;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.rsvp-next-btn:active,
+.rsvp-submit-btn:active {
+  background-color: var(--color-secondary);
+}
+
+.rsvp-submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.rsvp-back-btn {
+  flex: 1;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 12px;
+  font-family: var(--font-main);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.rsvp-success {
+  text-align: center;
+  padding: 20px 0;
+}

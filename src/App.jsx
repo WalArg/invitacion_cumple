@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import confetti from 'canvas-confetti';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import RsvpModal from './RsvpModal';
 import './index.css';
 
 const LeafSeparator = () => (
@@ -22,6 +23,8 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isOpened, setIsOpened] = useState(false);
+  const [isRsvpOpen, setIsRsvpOpen] = useState(false);
+  
   const audioRef = useRef(null);
   
   const babyRef = useRef(null);
@@ -347,6 +350,8 @@ function App() {
 
   return (
     <>
+      <RsvpModal isOpen={isRsvpOpen} onClose={() => setIsRsvpOpen(false)} />
+
       {/* Pantalla de bienvenida / Sobre */}
       <div className={`welcome-overlay ${isOpened ? 'opened' : ''}`}>
         <div className="welcome-content">
@@ -528,9 +533,9 @@ function App() {
             </div>
             <div className="location-title">CONFIRMAR ASISTENCIA</div>
             <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Nos haría muy felices que nos acompañes en este día tan especial.</div>
-            <a href="https://forms.gle/7HedJ1VvKDJSKKR1A" target="_blank" rel="noopener noreferrer" className="btn-agendar">
+            <button onClick={() => setIsRsvpOpen(true)} className="btn-agendar">
               CONFIRMAR
-            </a>
+            </button>
           </div>
 
           <LeafSeparator />
