@@ -81,7 +81,7 @@ const RsvpModal = ({ isOpen, onClose }) => {
         <button className="rsvp-close-btn" onClick={resetAndClose}>✕</button>
         
         {step === 1 && (
-          <div className="rsvp-step fade-in-section">
+          <div className="rsvp-step">
             <h3 className="rsvp-title">Confirmar Asistencia</h3>
             
             <div className="rsvp-field">
@@ -118,7 +118,7 @@ const RsvpModal = ({ isOpen, onClose }) => {
         )}
 
         {step === 2 && (
-          <div className="rsvp-step fade-in-section">
+          <div className="rsvp-step">
             <h3 className="rsvp-title">Acompañantes</h3>
             
             <div className="rsvp-field">
@@ -151,7 +151,7 @@ const RsvpModal = ({ isOpen, onClose }) => {
         )}
 
         {step === 3 && (
-          <div className="rsvp-step fade-in-section">
+          <div className="rsvp-step">
             <h3 className="rsvp-title">Restricciones</h3>
             
             <div className="rsvp-field">
@@ -176,7 +176,7 @@ const RsvpModal = ({ isOpen, onClose }) => {
         )}
 
         {step === 4 && (
-          <div className="rsvp-step fade-in-section rsvp-success">
+          <div className="rsvp-step rsvp-success">
             <h3 className="rsvp-title">¡Muchas gracias!</h3>
             <p className="rsvp-hint" style={{ fontSize: '1.2rem', marginTop: '10px' }}>Te esperamos para festejar juntos el primer añito de Luca. 🎂🎉</p>
             <button className="rsvp-next-btn" style={{ marginTop: '20px' }} onClick={resetAndClose}>Cerrar</button>
