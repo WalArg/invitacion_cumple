@@ -327,55 +327,40 @@ function App() {
 
   const handleDownloadCalendar = (e) => {
     e.preventDefault();
+    
+    // Descargar archivo .ics para todos los dispositivos
+    // Esto asegura que se abra en el calendario predeterminado de cada persona (Apple Calendar, Samsung Calendar, Outlook, etc.)
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Luca//Cumple//ES',
+      'BEGIN:VTIMEZONE',
+      'TZID:America/Argentina/Buenos_Aires',
+      'BEGIN:STANDARD',
+      'DTSTART:19700101T000000',
+      'TZOFFSETFROM:-0300',
+      'TZOFFSETTO:-0300',
+      'END:STANDARD',
+      'END:VTIMEZONE',
+      'BEGIN:VEVENT',
+      'SUMMARY:Cumple de Luca 1 añito 🎂',
+      'DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!',
+      'LOCATION:Hurling Club - Paso Morales 620',
+      'DTSTART;TZID=America/Argentina/Buenos_Aires:20260920T153000',
+      'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T190000',
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
 
-    // Detectar si es dispositivo Apple (iOS / iPadOS)
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-    if (isIOS) {
-      // Para Apple: Descargar archivo .ics
-      const icsContent = [
-        'BEGIN:VCALENDAR',
-        'VERSION:2.0',
-        'PRODID:-//Luca//Cumple//ES',
-        'BEGIN:VTIMEZONE',
-        'TZID:America/Argentina/Buenos_Aires',
-        'BEGIN:STANDARD',
-        'DTSTART:19700101T000000',
-        'TZOFFSETFROM:-0300',
-        'TZOFFSETTO:-0300',
-        'END:STANDARD',
-        'END:VTIMEZONE',
-        'BEGIN:VEVENT',
-        'SUMMARY:Cumple de Luca 1 añito 🎂',
-        'DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!',
-        'LOCATION:Hurling Club - Paso Morales 620',
-        'DTSTART;TZID=America/Argentina/Buenos_Aires:20260920T153000',
-        'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T190000',
-        'END:VEVENT',
-        'END:VCALENDAR',
-      ].join('\r\n');
-
-      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'cumple_luca.ics');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } else {
-      // Para Android y Desktop: Abrir link directo de Google Calendar
-      const title = encodeURIComponent('Cumple de Luca 1 añito 🎂');
-      const details = encodeURIComponent('¡Te esperamos para festejar el primer año de Luca!');
-      const location = encodeURIComponent('Hurling Club - Paso Morales 620');
-      // Formato ISO 8601 en UTC (Z) -> 15:30 ART = 18:30 UTC. 19:00 ART = 22:00 UTC.
-      const dates = '20260920T183000Z/20260920T220000Z';
-      
-      const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
-      
-      window.open(googleCalendarUrl, '_blank');
-    }
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', 'cumple_luca.ics');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
   };
 
   return (
