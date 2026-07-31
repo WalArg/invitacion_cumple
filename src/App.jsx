@@ -350,7 +350,7 @@ function App() {
       {/* Pantalla de bienvenida / Sobre */}
       <div className={`welcome-overlay ${isOpened ? 'opened' : ''}`}>
         <div className="welcome-content">
-          <h2>¡Estás invitado!</h2>
+          <h2>¡ Estás <br /> invitado!</h2>
           <button className="open-btn" onClick={handleOpenInvitation}>
             Abrir Invitación
           </button>
