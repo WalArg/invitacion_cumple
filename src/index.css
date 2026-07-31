@@ -48,8 +48,6 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--color-bg);
-  overflow: hidden;
-  /* Clips off-screen translated elements to prevent touch scroll locking */
 }
 
 /* Screen 1: Hero Header Container with luca.png background */
