@@ -46,7 +46,7 @@ function App() {
       scrollTrigger: {
         trigger: screen2, /* Pin the entire screen 2 so Date and Location stay visible */
         start: "top top",
-        end: "+=900",
+        end: "+=1800", /* Increased from 900 to 1800 to make the animation take more scrolling, thus appearing slower */
         pin: true,
         anticipatePin: 1,
         scrub: 1,
