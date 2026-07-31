@@ -414,7 +414,7 @@ END:VCALENDAR`;
             </a>
           </div>
 
-          <div className="final-greeting" style={{ marginBottom: '0px', marginTop: '80px', lineHeight: '0.8' }}>
+          <div className="final-greeting" style={{ marginBottom: '15px', marginTop: '80px', lineHeight: '0.8' }}>
             Te esperamos!
           </div>
 
