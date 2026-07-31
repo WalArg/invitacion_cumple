@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
 
-const leafSeparator = (
+const LeafSeparator = () => (
   <div style={{ margin: '40px 0', width: '100%', display: 'flex', justifyContent: 'center', opacity: 0.85 }}>
     <svg width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="0" y1="15" x2="80" y2="15" stroke="#97532A" strokeWidth="1.5" strokeLinecap="round" />
@@ -357,7 +357,7 @@ END:VCALENDAR`;
       <div className="screen-3-wrapper">
         <div className="app-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
-          {leafSeparator}
+          <LeafSeparator />
 
           {/* Código de vestimenta */}
           <div className="final-section">
@@ -371,7 +371,7 @@ END:VCALENDAR`;
             <div className="location-address" style={{ textTransform: 'none' }}>y recordá traer tu equipo de mate.</div>
           </div>
 
-          {leafSeparator}
+          <LeafSeparator />
 
           {/* Confirmar Asistencia */}
           <div className="final-section">
@@ -388,7 +388,7 @@ END:VCALENDAR`;
             </a>
           </div>
 
-          {leafSeparator}
+          <LeafSeparator />
 
           {/* Compartir fotos */}
           <div className="final-section">
