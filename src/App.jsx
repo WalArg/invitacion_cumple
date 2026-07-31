@@ -3,7 +3,18 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
 
-gsap.registerPlugin(ScrollTrigger);
+const leafSeparator = (
+  <div style={{ margin: '40px 0', width: '100%', display: 'flex', justifyContent: 'center', opacity: 0.85 }}>
+    <svg width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="80" y2="15" stroke="#97532A" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="120" y1="15" x2="200" y2="15" stroke="#97532A" strokeWidth="1.5" strokeLinecap="round" />
+      <g transform="translate(85, -1)">
+        <path d="M14 20C14 20 2 18 2 8C2 8 14 10 14 20Z" fill="#7D8F69" />
+        <path d="M16 20C16 20 28 17 28 5C28 5 16 7 16 20Z" fill="#557153" />
+      </g>
+    </svg>
+  </div>
+);
 
 function App() {
   const babyRef = useRef(null);
@@ -346,6 +357,8 @@ END:VCALENDAR`;
       <div className="screen-3-wrapper">
         <div className="app-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           
+          {leafSeparator}
+
           {/* Código de vestimenta */}
           <div className="final-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
@@ -357,6 +370,8 @@ END:VCALENDAR`;
             <div className="location-address" style={{ textTransform: 'none' }}>Cómo te sientas cómodo/a</div>
             <div className="location-address" style={{ textTransform: 'none' }}>y recordá traer tu equipo de mate.</div>
           </div>
+
+          {leafSeparator}
 
           {/* Confirmar Asistencia */}
           <div className="final-section">
@@ -373,6 +388,8 @@ END:VCALENDAR`;
             </a>
           </div>
 
+          {leafSeparator}
+
           {/* Compartir fotos */}
           <div className="final-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
@@ -388,7 +405,7 @@ END:VCALENDAR`;
             </a>
           </div>
 
-          <div className="final-greeting" style={{ marginBottom: '40px' }}>
+          <div className="final-greeting" style={{ marginBottom: '40px', marginTop: '40px' }}>
             Te esperamos!
           </div>
 
