@@ -48,7 +48,8 @@ const RsvpModal = ({ isOpen, onClose }) => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
-    const data = new FormData();
+    // Usamos URLSearchParams en vez de FormData para que Google Sheets lo procese correctamente
+    const data = new URLSearchParams();
     data.append('Nombre y apellido completo', formData.nombre);
     data.append('¿Venís acompañado/a?', formData.asistencia);
     data.append('Nombre de la pareja', formData.pareja);
