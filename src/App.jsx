@@ -423,7 +423,7 @@ END:VCALENDAR`;
 
       {/* Final Family Photo (Full width, attached to bottom) */}
       <img 
-        src="/anto_luca_wal_png.png" 
+        src="/anto_luca_wal.png" 
         alt="Anto, Luca y Wal" 
         style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} 
       />
