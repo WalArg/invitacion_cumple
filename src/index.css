@@ -47,7 +47,6 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding-bottom: 80vh;
   background-color: var(--color-bg);
   overflow: hidden;
   /* Clips off-screen translated elements to prevent touch scroll locking */
@@ -80,14 +79,13 @@ body {
   justify-content: center;
 }
 
-/* Screen 3: Fullscreen WhatsApp RSVP Section */
+/* Screen 3: Final Details Section */
 .screen-3-wrapper {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 40px 16px;
   box-sizing: border-box;
@@ -602,7 +600,7 @@ h2 {
 
 .final-greeting {
   font-family: 'WonderfulBranding', cursive;
-  font-size: 4rem;
+  font-size: 2.8rem;
   color: #3A4D3A; /* Same color as Luca title */
   text-align: center;
   margin-top: 20px;
