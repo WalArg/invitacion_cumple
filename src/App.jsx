@@ -84,6 +84,26 @@ function App() {
   };
 
   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (audioRef.current) {
+          audioRef.current.pause();
+        }
+      } else {
+        // Solo vuelve a reproducir si el estado indicaba que estaba activada
+        if (audioRef.current && isPlaying) {
+          audioRef.current.play().catch(() => {});
+        }
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [isPlaying]);
+
+  useEffect(() => {
     const baby = babyRef.current;
     const babySprite = babySpriteRef.current;
     const bear = bearRef.current;
