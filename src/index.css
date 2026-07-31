@@ -127,17 +127,7 @@ body {
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
 }
 
-/* "Deslizá hacia abajo 👇" - Elegant Cormorant Garamond font */
-.scroll-indicator-hero {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 1px;
-  color: #557153;
-  animation: bounce 2s infinite;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
-}
+
 
 /* Mobile-first container */
 .app-container {
@@ -177,18 +167,6 @@ body {
   gap: 40px;
 }
 
-/* Frosted glass cards */
-.glass-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 20px;
-  padding: 20px 16px;
-  box-shadow: 0 8px 32px rgba(85, 113, 83, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  text-align: center;
-}
-
 /* Typography */
 h1 {
   font-size: 1.75rem;
@@ -196,12 +174,6 @@ h1 {
   color: var(--color-primary);
   margin-bottom: 12px;
   line-height: 1.25;
-}
-
-p.subtitle {
-  font-size: 1rem;
-  color: var(--color-text);
-  margin-bottom: 16px;
 }
 
 h2 {
@@ -319,32 +291,18 @@ h2 {
   box-shadow: 0 8px 25px rgba(106, 56, 22, 0.25);
 }
 
+.btn-agendar:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 10px rgba(106, 56, 22, 0.15);
+}
+
 .btn-maps {
   font-size: 1.05rem;
   padding: 12px 26px;
   margin-top: 14px;
 }
 
-/* Leaf Divider */
-.leaf-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  gap: 12px;
-  margin: 14px 0 10px 0;
-}
 
-.leaf-divider .line {
-  flex: 1;
-  height: 1.5px;
-  background-color: #5C3A21;
-  opacity: 0.5;
-}
-
-.leaf-icon {
-  font-size: 1.2rem;
-}
 
 /* Location Section */
 .location-pin-icon {
@@ -374,53 +332,9 @@ h2 {
   line-height: 1.2;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  border: none;
-}
 
-.btn-primary {
-  background-color: var(--color-primary);
-  color: white;
-  box-shadow: 0 4px 15px rgba(85, 113, 83, 0.4);
-}
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(85, 113, 83, 0.5);
-}
 
-.btn-whatsapp {
-  background-color: #25D366;
-  color: white;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-}
-
-/* Scroll indicator animation */
-.scroll-indicator {
-  font-size: 0.95rem;
-  color: var(--color-secondary);
-  animation: bounce 2s infinite;
-  margin-top: 14px;
-}
 
 @keyframes bounce {
 
@@ -576,24 +490,10 @@ h2 {
   margin-bottom: 0px;
 }
 
-.title-pill {
-  background-color: #F4EBE3; /* Light beige/pink pill background, matching the image */
-  color: #B0694A; /* Soft brown/terracotta text color matching the image */
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  padding: 6px 18px;
-  border-radius: 8px; /* Slightly rounded, not a full pill, to match image */
-  margin-bottom: 15px;
-}
-
-.final-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.45rem;
-  font-weight: 500;
-  color: #97532A; /* Match the text color in the image */
-  line-height: 1.25;
+/* Fade-in animation for sections revealed on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .final-greeting {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
@@ -215,6 +215,25 @@ function App() {
       }, 0);
     }
 
+    // Fade-in animations for Screen 3 sections
+    const fadeElements = document.querySelectorAll('.fade-in-section');
+    fadeElements.forEach((el) => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
@@ -222,16 +241,27 @@ function App() {
 
   const handleDownloadCalendar = (e) => {
     e.preventDefault();
-    const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:Cumple de Luca 1 añito 🎂
-DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!
-LOCATION:Paso Morales 620
-DTSTART:20260920T183000Z
-DTEND:20260920T220000Z
-END:VEVENT
-END:VCALENDAR`;
+    const icsContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Luca//Cumple//ES',
+      'BEGIN:VTIMEZONE',
+      'TZID:America/Argentina/Buenos_Aires',
+      'BEGIN:STANDARD',
+      'DTSTART:19700101T000000',
+      'TZOFFSETFROM:-0300',
+      'TZOFFSETTO:-0300',
+      'END:STANDARD',
+      'END:VTIMEZONE',
+      'BEGIN:VEVENT',
+      'SUMMARY:Cumple de Luca 1 añito 🎂',
+      'DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!',
+      'LOCATION:Hurling Club - Paso Morales 620',
+      'DTSTART;TZID=America/Argentina/Buenos_Aires:20260920T153000',
+      'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T190000',
+      'END:VEVENT',
+      'END:VCALENDAR',
+    ].join('\r\n');
 
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -349,7 +379,7 @@ END:VCALENDAR`;
 
               {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Paso+Morales+620"
+                href="https://maps.app.goo.gl/xVqTXrm6RwWFeLcP8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-agendar btn-maps"
@@ -370,7 +400,7 @@ END:VCALENDAR`;
           <LeafSeparator />
 
           {/* Código de vestimenta */}
-          <div className="final-section">
+          <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20.38 3.46L16 2a8.59 8.59 0 0 0-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path>
@@ -383,7 +413,7 @@ END:VCALENDAR`;
           <LeafSeparator />
 
           {/* Confirmar Asistencia */}
-          <div className="final-section">
+          <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -400,7 +430,7 @@ END:VCALENDAR`;
           <LeafSeparator />
 
           {/* Compartir fotos */}
-          <div className="final-section">
+          <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
               <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
@@ -416,7 +446,7 @@ END:VCALENDAR`;
 
           <LeafSeparator />
 
-          <div className="final-greeting" style={{ marginBottom: '15px', marginTop: '0px', lineHeight: '0.8' }}>
+          <div className="final-greeting fade-in-section" style={{ marginBottom: '15px', marginTop: '0px', lineHeight: '0.8' }}>
             Te esperamos!
           </div>
 
