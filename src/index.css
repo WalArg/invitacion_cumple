@@ -85,7 +85,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 40px 16px;
+  padding: 40px 16px 0px 16px;
   box-sizing: border-box;
 }
 

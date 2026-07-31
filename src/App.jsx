@@ -414,12 +414,19 @@ END:VCALENDAR`;
             </a>
           </div>
 
-          <div className="final-greeting" style={{ marginBottom: '40px', marginTop: '40px' }}>
+          <div className="final-greeting" style={{ marginBottom: '20px', marginTop: '40px' }}>
             Te esperamos!
           </div>
 
         </div>
       </div>
+
+      {/* Final Family Photo (Full width, attached to bottom) */}
+      <img 
+        src="/anto_luca_wal_png.png" 
+        alt="Anto, Luca y Wal" 
+        style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }} 
+      />
 
     </div>
   );
