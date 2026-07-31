@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import confetti from 'canvas-confetti';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
 
@@ -37,6 +38,7 @@ function App() {
   const containerRef = useRef(null);
   const pinRef = useRef(null);
   const screen2Ref = useRef(null);
+  const finalGreetingRef = useRef(null);
 
   useEffect(() => {
     const playAudio = async () => {
@@ -302,6 +304,22 @@ function App() {
       );
     });
 
+    if (finalGreetingRef.current) {
+      ScrollTrigger.create({
+        trigger: finalGreetingRef.current,
+        start: 'top 80%',
+        onEnter: () => {
+          confetti({
+            particleCount: 120,
+            spread: 80,
+            origin: { y: 0.7 },
+            colors: ['#7D8F69', '#97532A', '#E8DCC4', '#557153'] // Colores de la temática bosque
+          });
+        },
+        once: true
+      });
+    }
+
     return () => {
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
@@ -538,7 +556,7 @@ function App() {
 
           <LeafSeparator />
 
-          <div className="final-greeting fade-in-section" style={{ marginBottom: '15px', marginTop: '0px', lineHeight: '0.8' }}>
+          <div ref={finalGreetingRef} className="final-greeting fade-in-section" style={{ marginBottom: '15px', marginTop: '0px', lineHeight: '0.8' }}>
             Te esperamos!
           </div>
 
