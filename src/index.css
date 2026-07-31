@@ -73,9 +73,12 @@ body {
 .welcome-content h2 {
   font-family: 'WonderfulBranding', cursive;
   color: var(--color-primary);
-  font-size: 4rem;
+  font-size: 3.2rem;
   font-weight: 400;
   margin: 0;
+  text-align: center;
+  line-height: 1.1;
+  padding: 0 20px;
 }
 
 .open-btn {
