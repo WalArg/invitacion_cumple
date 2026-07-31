@@ -24,6 +24,7 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isOpened, setIsOpened] = useState(false);
   const [isRsvpOpen, setIsRsvpOpen] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
   
   const audioRef = useRef(null);
   
@@ -47,6 +48,15 @@ function App() {
   useEffect(() => {
     // Ya no intentamos reproducir el audio inmediatamente al cargar,
     // esperamos a que el usuario toque 'Abrir Invitación'.
+
+    const handleScroll = () => {
+      // Si el usuario está a menos de 300px del final de la página, ocultar la flecha
+      const bottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 300;
+      setIsAtBottom(bottom);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleOpenInvitation = () => {
@@ -371,7 +381,7 @@ function App() {
       <button 
         className="floating-audio-btn" 
         onClick={toggleAudio}
-        aria-label="Toggle Music"
+        aria-label="Toggle Audio"
       >
         {isPlaying ? (
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -387,6 +397,14 @@ function App() {
           </svg>
         )}
       </button>
+
+      {/* Floating Scroll Indicator */}
+      <div className={`floating-scroll-indicator ${isAtBottom ? 'hidden' : ''}`}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+      </div>
 
       {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">

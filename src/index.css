@@ -636,6 +636,46 @@ h2 {
   transform: scale(0.95);
 }
 
+/* Floating Scroll Indicator */
+.floating-scroll-indicator {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(85, 113, 83, 0.2);
+  box-shadow: 0 4px 15px rgba(85, 113, 83, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  z-index: 100;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  animation: bounce 2s infinite;
+  pointer-events: none; /* So it doesn't block clicks */
+}
+
+.floating-scroll-indicator.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
 /* --- RSVP Modal Styles --- */
 .rsvp-modal-overlay {
   position: fixed;
