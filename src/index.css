@@ -125,6 +125,15 @@ body {
   /* Le restás 30px al margen superior (estaba en 80px) para que Luca quede exactamente en el mismo lugar */
   line-height: 0.9;
   text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 0 25px rgba(255, 255, 255, 0.95);
+  
+  /* Animación tipo firma escribiéndose */
+  clip-path: polygon(0 -20%, 0 120%, 0 120%, 0 -20%);
+  animation: writeSignature 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes writeSignature {
+  to { clip-path: polygon(0 -20%, 0 120%, 120% 120%, 120% -20%); }
 }
 
 /* "Te invito a" & "MI PRIMER AÑO" - Harmonious Cormorant Garamond subtitle spacing */
@@ -138,6 +147,23 @@ body {
   margin: 0px 0;
   line-height: 1.05;
   text-shadow: 0 2px 10px rgba(255, 255, 255, 0.95);
+
+  /* Animación de entrada suave */
+  opacity: 0;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.subtitle-primer-ano:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.subtitle-primer-ano:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 
