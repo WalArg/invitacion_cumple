@@ -593,8 +593,34 @@ h2 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.2rem;
   color: var(--color-primary);
-  margin-bottom: 40px;
+  margin-bottom: 5px;
   text-align: center;
+}
+
+.swipe-hint {
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 60px; /* Mucho más espacio antes de las fotos */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.8;
+}
+
+.swipe-arrow {
+  display: inline-block;
+  animation: swipeLeftRight 1.5s infinite;
+  font-size: 1.2rem;
+}
+
+@keyframes swipeLeftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
 }
 
 .timeline-container {

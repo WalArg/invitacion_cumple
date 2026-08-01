@@ -432,6 +432,11 @@ function App() {
       {/* Timeline Section */}
       <div className="timeline-wrapper fade-in-section">
         <h2 className="timeline-title">Un añito de aventuras</h2>
+        
+        <div className="swipe-hint">
+          Deslizá para ver <span className="swipe-arrow">→</span>
+        </div>
+
         <div className="timeline-container">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((month) => (
             <div className="timeline-card" key={month}>
