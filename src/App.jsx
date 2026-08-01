@@ -59,6 +59,20 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Controlar el scroll de la página según el estado de la invitación
+  useEffect(() => {
+    if (!isOpened) {
+      document.body.style.overflow = 'hidden'; // Bloquea el scroll
+      window.scrollTo(0, 0); // Fuerza a estar arriba
+    } else {
+      document.body.style.overflow = ''; // Restaura el scroll
+      window.scrollTo(0, 0); // Asegura que empiece desde arriba al abrir
+    }
+    
+    // Limpieza al desmontar
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpened]);
+
   const handleOpenInvitation = () => {
     setIsOpened(true);
     if (audioRef.current) {
