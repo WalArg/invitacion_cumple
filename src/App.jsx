@@ -541,23 +541,6 @@ function App() {
 
           <LeafSeparator />
 
-          {/* Compartir fotos */}
-          <div className="final-section fade-in-section">
-            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                <circle cx="12" cy="13" r="4"></circle>
-              </svg>
-            </div>
-            <div className="location-title">COMPARTIR FOTOS</div>
-            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Ayudanos a guardar los mejores recuerdos de este día ❤️</div>
-            <a href="https://photos.app.goo.gl/C5Hzt9sT8H8c79M59" target="_blank" rel="noopener noreferrer" className="btn-agendar">
-              SUBIR FOTOS
-            </a>
-          </div>
-
-          <LeafSeparator />
-
           {/* Confirmar Asistencia */}
           <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
@@ -571,6 +554,23 @@ function App() {
             <button onClick={() => setIsRsvpOpen(true)} className="btn-agendar">
               CONFIRMAR
             </button>
+          </div>
+
+          <LeafSeparator />
+
+          {/* Compartir fotos */}
+          <div className="final-section fade-in-section">
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+            </div>
+            <div className="location-title">COMPARTIR FOTOS</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Ayudanos a guardar los mejores recuerdos de este día ❤️</div>
+            <a href="https://photos.app.goo.gl/C5Hzt9sT8H8c79M59" target="_blank" rel="noopener noreferrer" className="btn-agendar">
+              SUBIR FOTOS
+            </a>
           </div>
 
           <LeafSeparator />
