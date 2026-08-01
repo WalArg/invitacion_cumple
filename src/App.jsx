@@ -434,7 +434,7 @@ function App() {
         <h2 className="timeline-title">Un añito de aventuras</h2>
         
         <div className="swipe-hint">
-          Deslizá para ver cómo crecí <span className="swipe-arrow">→</span>
+          Deslizá para ver mis mejores momentos <span className="swipe-arrow">→</span>
         </div>
 
         <div className="timeline-container">
