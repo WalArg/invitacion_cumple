@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import confetti from 'canvas-confetti';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RsvpModal from './RsvpModal';
-import FallingLeaves from './FallingLeaves';
 import './index.css';
 
 const LeafSeparator = () => (
@@ -420,8 +419,6 @@ function App() {
           <polyline points="19 12 12 19 5 12"></polyline>
         </svg>
       </div>
-
-      <FallingLeaves />
 
       {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">
