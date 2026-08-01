@@ -638,7 +638,7 @@ h2 {
 .timeline-container::before,
 .timeline-container::after {
   content: '';
-  flex: 0 0 calc(50% - 115px); /* 100px (mitad de la tarjeta) + 15px (mitad del gap) */
+  flex: 0 0 calc(50% - 165px); /* 150px (mitad de la tarjeta de 300px) + 15px (mitad del gap) */
 }
 
 .timeline-container::-webkit-scrollbar {
@@ -664,11 +664,11 @@ h2 {
 
 .polaroid-frame {
   background: white;
-  padding: 10px 10px 40px 10px; /* Extra bottom padding for polaroid look */
-  border-radius: 4px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 200px;
-  height: 250px;
+  padding: 15px 15px 60px 15px; /* Aumentado 1.5x (antes 10 10 40 10) */
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  width: 300px; /* Aumentado 1.5x (antes 200px) */
+  height: 375px; /* Aumentado 1.5x (antes 250px) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -685,9 +685,9 @@ h2 {
 
 .timeline-label {
   font-family: 'WonderfulBranding', cursive;
-  font-size: 1.8rem;
+  font-size: 2.7rem; /* Aumentado 1.5x (antes 1.8rem) */
   color: #3A4D3A;
-  margin-top: -35px; /* Overlap into the polaroid bottom area */
+  margin-top: -55px; /* Aumentado aprox 1.5x (antes -35px) */
   z-index: 2;
   text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
