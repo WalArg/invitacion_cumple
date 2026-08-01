@@ -415,6 +415,34 @@ function App() {
         </div>
       </div>
 
+      {/* Timeline Section */}
+      <div className="timeline-wrapper fade-in-section">
+        <h2 className="timeline-title">Un añito de aventuras</h2>
+        <div className="timeline-container">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((month) => (
+            <div className="timeline-card" key={month}>
+              <div className="polaroid-frame">
+                <img 
+                  src={`/galeria/mes-${month}.webp`} 
+                  alt={`${month} Meses`} 
+                  className="polaroid-img" 
+                  onError={(e) => { 
+                    e.target.onerror = null; 
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <div className="timeline-label">{month} {month === 1 ? 'Mes' : 'Meses'}</div>
+            </div>
+          ))}
+          <div className="timeline-card timeline-final-card">
+            <div className="polaroid-frame final-message">
+              <span>¡Y el mes 12 lo festejamos juntos! 🥳</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Screen 2: Date, AGENDAR, Forest Parade, Location & VER EN GOOGLE MAPS */}
       <div className="screen-2-wrapper" ref={screen2Ref}>
 

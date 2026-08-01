@@ -580,6 +580,97 @@ h2 {
   background-repeat: no-repeat;
 }
 
+/* Timeline Section */
+.timeline-wrapper {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.timeline-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  padding: 20px 30px;
+  gap: 30px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.timeline-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.timeline-card {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Rotate slightly for polaroid effect */
+}
+
+.timeline-card:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.timeline-card:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.polaroid-frame {
+  background: white;
+  padding: 10px 10px 40px 10px; /* Extra bottom padding for polaroid look */
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 200px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Fallback si no hay foto */
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.timeline-label {
+  font-family: 'WonderfulBranding', cursive;
+  font-size: 1.8rem;
+  color: #333;
+  margin-top: -35px; /* Overlap into the polaroid bottom area */
+  z-index: 2;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.timeline-final-card .polaroid-frame {
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
 /* Final Screen Layout */
 .final-section {
   display: flex;
