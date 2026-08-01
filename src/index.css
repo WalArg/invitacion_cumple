@@ -660,7 +660,7 @@ h2 {
 .timeline-label {
   font-family: 'WonderfulBranding', cursive;
   font-size: 1.8rem;
-  color: #333;
+  color: #3A4D3A;
   margin-top: -35px; /* Overlap into the polaroid bottom area */
   z-index: 2;
   text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
