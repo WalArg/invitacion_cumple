@@ -541,23 +541,6 @@ function App() {
 
           <LeafSeparator />
 
-          {/* Confirmar Asistencia */}
-          <div className="final-section fade-in-section">
-            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
-              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <div className="location-title">CONFIRMAR ASISTENCIA</div>
-            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Nos haría muy felices que nos acompañes en este día tan especial.</div>
-            <button onClick={() => setIsRsvpOpen(true)} className="btn-agendar">
-              CONFIRMAR
-            </button>
-          </div>
-
-          <LeafSeparator />
-
           {/* Compartir fotos */}
           <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
@@ -571,6 +554,23 @@ function App() {
             <a href="https://photos.app.goo.gl/C5Hzt9sT8H8c79M59" target="_blank" rel="noopener noreferrer" className="btn-agendar">
               SUBIR FOTOS
             </a>
+          </div>
+
+          <LeafSeparator />
+
+          {/* Confirmar Asistencia */}
+          <div className="final-section fade-in-section">
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <div className="location-title">CONFIRMAR ASISTENCIA</div>
+            <div className="location-address" style={{ textTransform: 'none', marginBottom: '15px' }}>Nos haría muy felices que nos acompañes en este día tan especial.</div>
+            <button onClick={() => setIsRsvpOpen(true)} className="btn-agendar">
+              CONFIRMAR
+            </button>
           </div>
 
           <LeafSeparator />
