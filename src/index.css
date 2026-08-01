@@ -602,10 +602,17 @@ h2 {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   width: 100%;
-  padding: 20px 30px;
+  padding: 20px 0;
   gap: 30px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+/* Espaciadores para que la primera y última tarjeta queden centradas */
+.timeline-container::before,
+.timeline-container::after {
+  content: '';
+  flex: 0 0 calc(50% - 115px); /* 100px (mitad de la tarjeta) + 15px (mitad del gap) */
 }
 
 .timeline-container::-webkit-scrollbar {
