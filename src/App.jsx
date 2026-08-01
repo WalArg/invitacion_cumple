@@ -80,6 +80,18 @@ function App() {
         console.log("Error al reproducir audio");
       });
       setIsPlaying(true);
+      
+      // Configurar el reproductor del sistema (Lockscreen en iOS/Android)
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: '¡Primer Añito!',
+          artist: 'Luca',
+          album: 'Invitación',
+          artwork: [
+            { src: '/luca_og.png', sizes: '512x512', type: 'image/png' }
+          ]
+        });
+      }
     }
   };
 
