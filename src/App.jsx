@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import confetti from 'canvas-confetti';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RsvpModal from './RsvpModal';
+import FallingLeaves from './FallingLeaves';
 import './index.css';
 
 const LeafSeparator = () => (
@@ -412,13 +413,15 @@ function App() {
         )}
       </button>
 
-      {/* Floating Scroll Indicator */}
+      {/* Indicador de Swipe */}
       <div className={`floating-scroll-indicator ${isAtBottom ? 'hidden' : ''}`}>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <polyline points="19 12 12 19 5 12"></polyline>
         </svg>
       </div>
+
+      <FallingLeaves />
 
       {/* Screen 1: Hero Header Section with luca.png background */}
       <div className="hero-header-wrapper">

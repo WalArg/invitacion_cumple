@@ -597,6 +597,36 @@ h2 {
   text-align: center;
 }
 
+/* Falling Leaves Effect */
+.falling-leaves-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1; /* Detrás del contenido principal, pero visible */
+}
+
+.leaf {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear infinite, sway ease-in-out infinite alternate;
+  top: -10%;
+}
+
+@keyframes fall {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+@keyframes sway {
+  0% { transform: translateX(0px) rotate(0deg); }
+  100% { transform: translateX(30px) rotate(45deg); }
+}
+
 .swipe-hint {
   font-family: var(--font-main);
   font-size: 0.9rem;
