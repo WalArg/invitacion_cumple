@@ -366,9 +366,9 @@ function App() {
       'BEGIN:VEVENT',
       'SUMMARY:Cumple de Luca 1 añito 🎂',
       'DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!',
-      'LOCATION:Hurling Club - Paso Morales 620',
+      'LOCATION:Joliet - Juana Azurduy 531',
       'DTSTART;TZID=America/Argentina/Buenos_Aires:20260920T153000',
-      'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T190000',
+      'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T200000',
       'END:VEVENT',
       'END:VCALENDAR',
     ].join('\r\n');
@@ -496,7 +496,7 @@ function App() {
 
                 <div className="date-side-col">
                   <div className="divider-line"></div>
-                  <span className="date-label">15:30 HRS</span>
+                  <span className="date-label">15:30 A 20:00 HS</span>
                   <div className="divider-line"></div>
                 </div>
               </div>
@@ -562,12 +562,12 @@ function App() {
               </div>
 
               <div className="location-title">LUGAR DEL CUMPLEAÑOS</div>
-              <div className="location-address">PASO MORALES 620</div>
-              <div className="location-address">HURLING CLUB</div>
+              <div className="location-address">JUANA AZURDUY 531</div>
+              <div className="location-address">JOLIET</div>
 
               {/* VER EN GOOGLE MAPS Button (Links to Google Maps) */}
               <a
-                href="https://maps.app.goo.gl/xVqTXrm6RwWFeLcP8"
+                href="https://www.google.com/maps/search/?api=1&query=Joliet+Juana+Azurduy+531"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-agendar btn-maps"
