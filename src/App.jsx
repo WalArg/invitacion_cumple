@@ -600,6 +600,30 @@ function App() {
 
           <LeafSeparator />
 
+          {/* Regalitos */}
+          <div className="final-section fade-in-section">
+            <div className="location-pin-icon" style={{ marginTop: '0px' }}>
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5C3A21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 12v10H4V12"></path>
+                <path d="M22 7H2v5h20V7z"></path>
+                <path d="M12 22V7"></path>
+                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+              </svg>
+            </div>
+            <div className="location-title">REGALOS</div>
+            <div className="location-address" style={{ textTransform: 'none', letterSpacing: '0.5px', lineHeight: '1.4', maxWidth: '380px' }}>
+              <p style={{ marginBottom: '12px' }}>
+                Lo más importante para nosotros es que vengas a celebrar y compartir este día tan especial con Luca. ❤️
+              </p>
+              <p>
+                Si querés hacerle un regalito, algunas ideas que nos encantan son libros, juguetes de madera o didácticos, ropa o cualquier otro detalle o aporte con el que desees acompañarlo en sus próximas etapas. 🧸
+              </p>
+            </div>
+          </div>
+
+          <LeafSeparator />
+
           {/* Confirmar Asistencia */}
           <div className="final-section fade-in-section">
             <div className="location-pin-icon" style={{ marginTop: '0px' }}>
