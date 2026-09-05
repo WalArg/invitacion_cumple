@@ -367,8 +367,8 @@ function App() {
       'SUMMARY:Cumple de Luca 1 añito 🎂',
       'DESCRIPTION:¡Te esperamos para festejar el primer año de Luca!',
       'LOCATION:Joliet - Juana Azurduy 531',
-      'DTSTART;TZID=America/Argentina/Buenos_Aires:20260920T153000',
-      'DTEND;TZID=America/Argentina/Buenos_Aires:20260920T200000',
+      'DTSTART;TZID=America/Argentina/Buenos_Aires:20260927T153000',
+      'DTEND;TZID=America/Argentina/Buenos_Aires:20260927T200000',
       'END:VEVENT',
       'END:VCALENDAR',
     ].join('\r\n');
@@ -492,7 +492,7 @@ function App() {
                   <div className="divider-line"></div>
                 </div>
 
-                <div className="date-center-number">20</div>
+                <div className="date-center-number">27</div>
 
                 <div className="date-side-col">
                   <div className="divider-line"></div>
