@@ -310,10 +310,11 @@ h2 {
 }
 
 .details-date-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
+  justify-items: center;
+  gap: 10px;
   width: 100%;
   margin: 4px 0;
 }
@@ -324,7 +325,8 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  flex: 1;
+  width: 100%;
+  min-width: 0;
 }
 
 .date-side-col .divider-line {
@@ -336,15 +338,17 @@ h2 {
 
 .date-label {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: clamp(0.85rem, 3.5vw, 1.1rem);
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: #5C3A21;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
   white-space: nowrap;
   font-variant-numeric: lining-nums tabular-nums;
   font-feature-settings: "lnum" 1, "tnum" 1;
+  text-align: center;
+  max-width: 100%;
 }
 
 .date-center-number {
@@ -354,9 +358,11 @@ h2 {
   line-height: 0.85;
   color: #5C3A21;
   text-shadow: 0 2px 8px rgba(255, 255, 255, 0.95);
-  padding: 0 4px;
+  padding: 0 2px;
   font-variant-numeric: lining-nums tabular-nums;
   font-feature-settings: "lnum" 1, "tnum" 1;
+  text-align: center;
+  justify-self: center;
 }
 
 .details-year {
